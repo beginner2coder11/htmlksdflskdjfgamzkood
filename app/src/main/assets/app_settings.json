@@ -1,8 +1,8 @@
 {
   "appName": "Blade Rush",
   "package": "com.test.bladerush",
-  "versionName": "1.2.0",
-  "versionCode": 3,
+  "versionName": "1.2.1",
+  "versionCode": 4,
   "splashColor": "#22114a",
   "ads": {
     "enabled": true,

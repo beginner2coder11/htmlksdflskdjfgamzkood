@@ -18,6 +18,9 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 class AdInterstitial(private val activity: Activity, private val unitId: String) {
     private var ad: InterstitialAd? = null
     private var loading = false
+    /** Called once after the next load finishes (loaded or failed). */
+    var onSettled: (() -> Unit)? = null
+    private fun settled() { onSettled?.invoke(); onSettled = null }
 
     fun preload() {
         if (unitId.isBlank() || ad != null || loading) return
@@ -25,10 +28,10 @@ class AdInterstitial(private val activity: Activity, private val unitId: String)
         loading = true
         runCatching {
             InterstitialAd.load(activity, unitId, AdRequest.Builder().build(), object : InterstitialAdLoadCallback() {
-                override fun onAdLoaded(a: InterstitialAd) { loading = false; ad = a }
-                override fun onAdFailedToLoad(e: LoadAdError) { loading = false; ad = null; Log.d(TAG, "not loaded: ${e.code} ${e.message}") }
+                override fun onAdLoaded(a: InterstitialAd) { loading = false; ad = a; settled() }
+                override fun onAdFailedToLoad(e: LoadAdError) { loading = false; ad = null; settled(); Log.d(TAG, "not loaded: ${e.code} ${e.message}") }
             })
-        }.onFailure { loading = false; Log.w(TAG, "request failed", it) }
+        }.onFailure { loading = false; settled(); Log.w(TAG, "request failed", it) }
     }
 
     fun show(done: () -> Unit) {

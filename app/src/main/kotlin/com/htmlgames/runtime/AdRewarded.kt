@@ -27,6 +27,9 @@ class AdRewarded(
 ) {
     private var rewarded: RewardedAd? = null
     private var loading = false
+    /** Called once after the next load finishes (loaded or failed). */
+    var onSettled: (() -> Unit)? = null
+    private fun settled() { onSettled?.invoke(); onSettled = null }
 
     val isEnabled: Boolean get() = unitId.isNotBlank()
 
@@ -50,16 +53,18 @@ class AdRewarded(
                 override fun onAdLoaded(ad: RewardedAd) {
                     loading = false
                     rewarded = ad
+                    settled()
                 }
 
                 override fun onAdFailedToLoad(error: LoadAdError) {
                     loading = false
                     rewarded = null
+                    settled()
                     Log.d(TAG, "rewarded not loaded: ${error.code} ${error.message}")
                 }
             }
         )
-        }.onFailure { loading = false; Log.w(TAG, "rewarded request failed", it) }
+        }.onFailure { loading = false; settled(); Log.w(TAG, "rewarded request failed", it) }
     }
 
     /**
