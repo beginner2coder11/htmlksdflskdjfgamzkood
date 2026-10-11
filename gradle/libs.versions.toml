@@ -1,0 +1,16 @@
+[versions]
+agp = "9.0.1"
+coreKtx = "1.13.1"
+appcompat = "1.7.0"
+admob = "25.4.0"
+ump = "4.0.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-webkit = { group = "androidx.webkit", name = "webkit", version = "1.12.1" }
+admob = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "admob" }
+ump = { group = "com.google.android.ump", name = "user-messaging-platform", version.ref = "ump" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

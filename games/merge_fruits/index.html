@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Merge Fruits</title>
+  <meta name="description" content="Swipe to merge fruits and grow the legendary Golden Melon.">
+  <meta name="theme-color" content="#ff9f5a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="preload" href="fonts/lilitaone-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="bg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <main id="app">
+    <!-- LOADING -->
+    <section id="screen-loading" class="screen active">
+      <div class="loading-fruit">🍉</div>
+      <div class="load-bar"><i id="load-fill"></i></div>
+    </section>
+
+    <!-- HOME -->
+    <section id="screen-home" class="screen">
+      <div class="home-top">
+        <div class="pill"><span data-art="coin"></span><b class="coin-count">0</b></div>
+        <button class="icon-btn" id="btn-home-settings" aria-label="Settings"></button>
+      </div>
+      <div id="logo-wrap"></div>
+      <div id="parade"></div>
+      <div class="home-best"><span data-art="trophy"></span><span>Best</span><b id="home-best">0</b></div>
+      <div class="home-actions">
+        <button class="btn btn-green btn-big" id="btn-play"></button>
+        <button class="btn btn-blue" id="btn-new" hidden><span>New Game</span></button>
+        <button class="btn btn-purple" id="btn-daily"><span data-art="gift"></span><span>Daily Gift</span><i class="dot" id="daily-dot" hidden></i></button>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="screen-game" class="screen">
+      <header class="topbar">
+        <button class="icon-btn" id="btn-pause" aria-label="Pause"></button>
+        <div class="scorebox"><small>SCORE</small><b id="score">0</b></div>
+        <div class="scorebox"><small>BEST</small><b id="best">0</b></div>
+        <div class="pill" id="coins"><span data-art="coin"></span><b class="coin-count">0</b></div>
+      </header>
+
+      <div class="goal">
+        <div class="goal-fruit" id="goal-cur"></div>
+        <div class="goal-mid">
+          <span id="goal-label">Next</span>
+          <div class="goal-bar"><i id="goal-fill"></i></div>
+        </div>
+        <div class="goal-fruit next" id="goal-next"></div>
+      </div>
+
+      <div id="board-area">
+        <div id="board">
+          <div id="cells"></div>
+          <div id="tiles"></div>
+        </div>
+        <div id="mode-banner" hidden><span id="mode-text"></span><button id="mode-cancel" aria-label="Cancel"></button></div>
+      </div>
+
+      <footer class="powerups" id="powerups"></footer>
+    </section>
+  </main>
+
+  <div id="modal-root"></div>
+  <canvas id="fx"></canvas>
+  <div id="floaters"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

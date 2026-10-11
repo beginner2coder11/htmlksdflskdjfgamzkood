@@ -1,0 +1,70 @@
+# Builds one game app per pushed build-* branch (pushed by htmlgames-worker) and
+# publishes the APK/AAB as a release tagged with the same name.
+name: build
+
+on:
+  push:
+    branches: ["build-*"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Prepare the game
+        run: node scripts/prepare.js
+
+      - name: Signing key
+        env:
+          KEYSTORE_B64: ${{ secrets.KEYSTORE_B64 }}
+        run: |
+          echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          echo "SIGN_STORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+
+      - name: Build
+        env:
+          SIGN_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          SIGN_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          SIGN_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          TARGET=$(node -p 'require("./job/build.json").target')
+          chmod +x gradlew
+          mkdir -p out
+          if [ "$TARGET" = "aab" ]; then
+            ./gradlew :app:bundleRelease --no-daemon --console=plain
+            cp app/build/outputs/bundle/release/app-release.aab out/game.aab
+          else
+            ./gradlew :app:assembleRelease --no-daemon --console=plain
+            cp app/build/outputs/apk/release/app-release.apk out/game.apk
+          fi
+          # the reskinned game's source code, for the buyer (README etc. included)
+          (cd games/$(node -p 'require("./job/build.json").dir') && zip -qr "$GITHUB_WORKSPACE/out/source.zip" .) || true
+          (cd app/src/main/assets/web && zip -qr "$GITHUB_WORKSPACE/out/source.zip" js/config.js $(cd "$GITHUB_WORKSPACE/job/files" 2>/dev/null && find . -type f | sed 's#^./##'))
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG" out/* --target "$GITHUB_SHA" --title "$TAG" --notes "Builder build" --prerelease

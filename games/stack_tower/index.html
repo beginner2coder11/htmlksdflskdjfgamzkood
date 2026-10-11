@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Stack Tower</title>
+  <meta name="description" content="Tap to drop each block. Land perfect drops, grow your tower into space.">
+  <meta name="theme-color" content="#ff9a7a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="preload" href="fonts/lilitaone-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="loading">
+  <canvas id="stage"></canvas>
+
+  <main id="app">
+    <!-- LOADING -->
+    <section id="screen-loading" class="screen active">
+      <div class="load-bar"><i id="load-fill"></i></div>
+    </section>
+
+    <!-- HOME (the live demo tower builds behind it) -->
+    <section id="screen-home" class="screen">
+      <div class="home-top">
+        <div class="pill"><span data-art="coin"></span><b class="coin-count">0</b></div>
+        <button class="icon-btn" id="btn-home-settings" aria-label="Settings"></button>
+      </div>
+      <div id="logo-wrap"></div>
+      <div class="home-best"><span data-art="crown"></span><span>Best</span><b id="home-best">0</b></div>
+      <div class="home-actions">
+        <button class="btn btn-green btn-play" id="btn-play"><span class="bi"></span><span>PLAY</span></button>
+        <div class="home-row">
+          <button class="btn btn-purple" id="btn-missions"><span data-art="missions"></span><span>Missions</span><i class="dot" id="missions-dot" hidden></i></button>
+          <button class="btn btn-pink" id="btn-themes"><span data-art="palette"></span><span>Themes</span></button>
+        </div>
+        <button class="btn btn-orange" id="btn-daily"><span data-art="gift"></span><span>Daily Gift</span><i class="dot" id="daily-dot" hidden></i></button>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="screen-game" class="screen">
+      <header class="topbar">
+        <button class="icon-btn" id="btn-pause" aria-label="Pause"></button>
+        <div class="pill" id="coins"><span data-art="coin"></span><b class="coin-count">0</b></div>
+      </header>
+      <div class="score-wrap">
+        <b id="score">0</b>
+        <span id="meters">0 m</span>
+        <div id="streak" hidden></div>
+      </div>
+      <div id="tap-hint" hidden><span class="finger">👆</span><b>TAP TO DROP</b><small>Line it up perfectly!</small></div>
+      <footer class="powerups" id="powerups"></footer>
+    </section>
+  </main>
+
+  <div id="modal-root"></div>
+  <canvas id="fx"></canvas>
+  <div id="floaters"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/tower.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

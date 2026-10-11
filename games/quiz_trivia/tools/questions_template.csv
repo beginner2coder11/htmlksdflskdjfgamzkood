@@ -1,0 +1,192 @@
+category,difficulty,question,correct,wrong1,wrong2,wrong3
+science,1,What gas do plants absorb from the air for photosynthesis?,Carbon dioxide,Oxygen,Nitrogen,Hydrogen
+science,1,What is the chemical formula for water?,H2O,CO2,O2,NaCl
+science,1,How many legs does an insect have?,6,8,4,10
+science,1,"At sea level, water boils at what temperature?",100°C,90°C,120°C,80°C
+science,1,Which organ pumps blood around the body?,Heart,Lungs,Liver,Kidney
+science,1,What do bees collect from flowers to make honey?,Nectar,Pollen,Sap,Dew
+science,1,An animal that eats only plants is called a…,Herbivore,Carnivore,Omnivore,Predator
+science,2,What is the chemical symbol for gold?,Au,Ag,Gd,Go
+science,2,What is the hardest natural substance?,Diamond,Quartz,Iron,Granite
+science,2,What force keeps us on the ground?,Gravity,Magnetism,Friction,Inertia
+science,2,How many bones are in the adult human body?,206,186,256,300
+science,2,What is the largest organ of the human body?,Skin,Liver,Brain,Lungs
+science,2,Which element has the chemical symbol O?,Oxygen,Iron,Silver,Zinc
+science,2,Which blood cells help the body fight infection?,White blood cells,Red blood cells,Platelets,Plasma
+science,2,Which vitamin does your skin make in sunlight?,Vitamin D,Vitamin C,Vitamin A,Vitamin B12
+science,2,Sound travels fastest through which of these?,Steel,Air,Water,A vacuum
+science,2,What is the center of an atom called?,Nucleus,Electron,Shell,Orbital
+science,3,What is the most abundant gas in Earth's atmosphere?,Nitrogen,Oxygen,Carbon dioxide,Argon
+science,3,Roughly how fast does light travel in a vacuum?,"300,000 km/s","150,000 km/s","30,000 km/s","3,000,000 km/s"
+science,3,What is the atomic number of carbon?,6,12,8,4
+science,3,What is the pH of pure water at 25°C?,7,0,14,5
+science,3,Which metal is liquid at room temperature?,Mercury,Lead,Aluminium,Tin
+science,3,A stretched rubber band stores which kind of energy?,Elastic potential,Kinetic,Thermal,Nuclear
+science,1,Lightning is hotter than the surface of the Sun.,TRUE,,,
+science,1,Humans have four lungs.,FALSE,,,
+science,2,Sound can travel through a vacuum.,FALSE,,,
+science,2,Water expands when it freezes.,TRUE,,,
+science,3,Diamonds are made of carbon.,TRUE,,,
+science,3,Glass is a slow-flowing liquid at room temperature.,FALSE,,,
+geography,1,What is the capital of France?,Paris,Lyon,Marseille,Nice
+geography,1,What is the largest ocean on Earth?,Pacific,Atlantic,Indian,Arctic
+geography,1,Egypt is on which continent?,Africa,Asia,Europe,South America
+geography,1,What is the capital of Japan?,Tokyo,Kyoto,Osaka,Seoul
+geography,1,Which country is shaped like a boot?,Italy,Spain,Greece,Portugal
+geography,1,What is the capital of the United Kingdom?,London,Manchester,Edinburgh,Liverpool
+geography,2,Which river flows through Cairo?,Nile,Congo,Niger,Zambezi
+geography,2,What is the capital of Australia?,Canberra,Sydney,Melbourne,Perth
+geography,2,Mount Everest sits on the border of Nepal and which country?,China,India,Bhutan,Pakistan
+geography,2,What is the capital of Canada?,Ottawa,Toronto,Vancouver,Montreal
+geography,2,Which is the largest hot desert in the world?,Sahara,Gobi,Kalahari,Atacama
+geography,2,What is the capital of Brazil?,Brasília,Rio de Janeiro,São Paulo,Salvador
+geography,2,Which is the largest country by area?,Russia,Canada,China,USA
+geography,2,Which African country has the largest population?,Nigeria,Egypt,Ethiopia,South Africa
+geography,2,The Great Barrier Reef lies off the coast of which country?,Australia,Indonesia,Philippines,Fiji
+geography,2,Which mountain range is the traditional border between Europe and Asia?,Ural Mountains,Alps,Andes,Himalayas
+geography,2,Which country is called the Land of the Rising Sun?,Japan,China,Thailand,Korea
+geography,2,What is the capital of Egypt?,Cairo,Alexandria,Giza,Luxor
+geography,2,The Andes mountains are on which continent?,South America,Africa,Asia,North America
+geography,2,Monaco lies on the coast of which sea?,Mediterranean,Black Sea,Baltic Sea,Red Sea
+geography,3,What is the capital of New Zealand?,Wellington,Auckland,Christchurch,Queenstown
+geography,3,What is the capital of Turkey?,Ankara,Istanbul,Izmir,Antalya
+geography,3,"Lake Baikal, the world's deepest lake, is in which country?",Russia,Mongolia,Kazakhstan,China
+geography,3,The city of Marrakech is in which country?,Morocco,Tunisia,Algeria,Egypt
+geography,3,"Since 2023, which country has the world's largest population?",India,China,USA,Indonesia
+geography,1,Africa is the largest continent.,FALSE,,,
+geography,2,Australia is both a country and a continent.,TRUE,,,
+geography,2,Most of the Amazon rainforest is in Brazil.,TRUE,,,
+geography,2,Iceland is mostly covered in ice.,FALSE,,,
+geography,3,Russia spans 11 time zones.,TRUE,,,
+animals,1,What is the largest animal on Earth?,Blue whale,Elephant,Giraffe,Great white shark
+animals,1,Which animal is known as the King of the Jungle?,Lion,Tiger,Elephant,Gorilla
+animals,1,How many legs does a spider have?,8,6,10,12
+animals,1,What do giant pandas mainly eat?,Bamboo,Fish,Fruit,Insects
+animals,1,Which animal has black and white stripes?,Zebra,Giraffe,Leopard,Camel
+animals,1,Which animal is known for its long trunk?,Elephant,Rhino,Hippo,Giraffe
+animals,2,What is the fastest land animal?,Cheetah,Lion,Horse,Pronghorn
+animals,2,Which bird is famous for copying human speech?,Parrot,Penguin,Owl,Eagle
+animals,2,What is a group of lions called?,Pride,Pack,Herd,Flock
+animals,2,Which of these mammals can truly fly?,Bat,Penguin,Ostrich,Lemur
+animals,2,How many hearts does an octopus have?,3,1,2,4
+animals,2,What is a baby kangaroo called?,Joey,Cub,Kid,Calf
+animals,2,Which is the tallest animal?,Giraffe,Elephant,Ostrich,Moose
+animals,2,Which of these birds cannot fly?,Penguin,Eagle,Sparrow,Pelican
+animals,2,What do caterpillars turn into?,Butterflies,Beetles,Dragonflies,Bees
+animals,2,What is the largest living reptile?,Saltwater crocodile,Komodo dragon,Anaconda,Leatherback turtle
+animals,2,What is a group of fish called?,School,Pack,Pride,Gaggle
+animals,2,How many arms does a starfish usually have?,5,4,6,8
+animals,3,Roughly how long is an elephant's pregnancy?,22 months,9 months,12 months,36 months
+animals,3,What is a group of owls called?,Parliament,Pride,School,Pod
+animals,3,Which animal has the largest eyes in the animal kingdom?,Colossal squid,Elephant,Ostrich,Blue whale
+animals,3,A 'kid' is the baby of which animal?,Goat,Sheep,Cow,Deer
+animals,1,Bats are blind.,FALSE,,,
+animals,1,Spiders are insects.,FALSE,,,
+animals,2,An octopus has three hearts.,TRUE,,,
+animals,2,Horses can sleep standing up.,TRUE,,,
+animals,2,Goldfish only have a three-second memory.,FALSE,,,
+animals,3,A shrimp's heart is located in its head.,TRUE,,,
+space,1,Which planet is known as the Red Planet?,Mars,Venus,Jupiter,Mercury
+space,1,What is the largest planet in our solar system?,Jupiter,Saturn,Neptune,Earth
+space,1,What is the closest star to Earth?,The Sun,Proxima Centauri,Sirius,Polaris
+space,2,Which planet is famous for its bright rings?,Saturn,Jupiter,Uranus,Mars
+space,2,How many planets are in our solar system?,8,9,7,10
+space,2,What is the hottest planet in our solar system?,Venus,Mercury,Mars,Jupiter
+space,2,Who was the first person to walk on the Moon?,Neil Armstrong,Buzz Aldrin,Yuri Gagarin,Michael Collins
+space,2,Which galaxy do we live in?,Milky Way,Andromeda,Whirlpool,Sombrero
+space,2,Which planet is closest to the Sun?,Mercury,Venus,Earth,Mars
+space,2,What is a shooting star really?,A meteor,A falling star,A comet's tail,A satellite
+space,2,Which planet is famous for its Great Red Spot?,Jupiter,Mars,Saturn,Neptune
+space,3,Who was the first human to travel into space?,Yuri Gagarin,Neil Armstrong,Alan Shepard,John Glenn
+space,3,About how long does sunlight take to reach Earth?,8 minutes,8 seconds,1 hour,1 day
+space,3,Which planet spins on its side?,Uranus,Neptune,Saturn,Venus
+space,3,What is Saturn's largest moon?,Titan,Europa,Ganymede,Io
+space,3,In which year did humans first land on the Moon?,1969,1965,1972,1959
+space,3,What is the largest volcano in the solar system?,Olympus Mons,Mauna Kea,Mount Fuji,Vesuvius
+space,3,Which space telescope launched in December 2021?,James Webb,Hubble,Kepler,Spitzer
+space,1,The Sun is a star.,TRUE,,,
+space,2,Pluto is classified as a dwarf planet.,TRUE,,,
+space,2,There is no gravity in space.,FALSE,,,
+space,2,The Moon makes its own light.,FALSE,,,
+space,3,A day on Venus is longer than its year.,TRUE,,,
+history,1,Who was the first President of the United States?,George Washington,Thomas Jefferson,John Adams,Benjamin Franklin
+history,2,The ancient pyramids of Giza are in which country?,Egypt,Mexico,Peru,Greece
+history,2,Which civilization built Machu Picchu?,Inca,Aztec,Maya,Olmec
+history,2,In which year did World War II end?,1945,1939,1918,1950
+history,2,Who painted the Mona Lisa?,Leonardo da Vinci,Michelangelo,Raphael,Van Gogh
+history,2,The Great Wall was built in which country?,China,Japan,India,Mongolia
+history,2,Which famous ship sank in 1912?,Titanic,Lusitania,Britannic,Queen Mary
+history,2,Julius Caesar was a leader of which ancient civilization?,Rome,Greece,Egypt,Persia
+history,2,Who wrote the play Romeo and Juliet?,William Shakespeare,Charles Dickens,Jane Austen,Mark Twain
+history,2,Where were the ancient Olympic Games held?,Greece,Rome,Egypt,China
+history,2,Which brothers made the first powered airplane flight?,Wright brothers,Lumière brothers,Grimm brothers,Marx brothers
+history,2,What writing system did ancient Egyptians use?,Hieroglyphs,Cuneiform,Latin,Runes
+history,3,In which year did the Berlin Wall fall?,1989,1991,1975,1961
+history,3,Who was the first woman to win a Nobel Prize?,Marie Curie,Rosalind Franklin,Ada Lovelace,Florence Nightingale
+history,3,In which year did Columbus first reach the Americas?,1492,1500,1453,1620
+history,3,Which country gave the Statue of Liberty to the USA?,France,United Kingdom,Spain,Italy
+history,3,Who made the first solo nonstop flight across the Atlantic?,Charles Lindbergh,Amelia Earhart,Orville Wright,Howard Hughes
+history,3,Who was the first female Prime Minister of the UK?,Margaret Thatcher,Theresa May,Queen Victoria,Indira Gandhi
+history,3,The Renaissance began in which country?,Italy,France,England,Spain
+history,1,The ancient Romans spoke Latin.,TRUE,,,
+history,2,Napoleon was unusually short for his time.,FALSE,,,
+history,2,Vikings wore horned helmets in battle.,FALSE,,,
+history,3,Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid.,TRUE,,,
+sports,1,How many players does a soccer team have on the field?,11,9,10,12
+sports,1,In which sport would you perform a slam dunk?,Basketball,Volleyball,Tennis,Golf
+sports,1,How many rings are on the Olympic flag?,5,4,6,7
+sports,2,Which country has won the most FIFA World Cups?,Brazil,Germany,Italy,Argentina
+sports,2,How long is a marathon?,42.195 km,26 km,50 km,40 km
+sports,2,"In tennis, what is a score of zero called?",Love,Nil,Duck,Blank
+sports,2,Which sport is played at Wimbledon?,Tennis,Cricket,Golf,Rugby
+sports,2,How many points is a touchdown worth in American football?,6,7,3,2
+sports,2,How many holes are in a standard round of golf?,18,9,12,20
+sports,2,Which sport uses a shuttlecock?,Badminton,Squash,Table tennis,Polo
+sports,2,In which sport do players hit a puck?,Ice hockey,Lacrosse,Curling,Field hockey
+sports,3,Where were the first modern Olympic Games held in 1896?,Athens,Paris,London,St. Louis
+sports,3,"In cricket, how many balls are in a standard over?",6,5,8,10
+sports,3,How many players are on a basketball team's court at once?,5,6,7,4
+sports,3,What is the standard maximum break in snooker?,147,155,100,180
+sports,1,Regular time in a soccer match is 90 minutes.,TRUE,,,
+sports,2,A basketball hoop is 10 feet high.,TRUE,,,
+sports,2,Golf has been played on the Moon.,TRUE,,,
+food,1,Which fruit is said to keep the doctor away?,Apple,Banana,Orange,Grape
+food,1,What is the main ingredient in guacamole?,Avocado,Tomato,Pea,Cucumber
+food,1,Pizza originally comes from which country?,Italy,France,Greece,Mexico
+food,1,Which fruit has its seeds on the outside?,Strawberry,Banana,Kiwi,Mango
+food,2,What is sushi commonly wrapped in?,Seaweed,Rice paper,Lettuce,Tofu skin
+food,2,Which nut is used to make marzipan?,Almond,Peanut,Walnut,Cashew
+food,2,What makes bread dough rise?,Yeast,Salt,Sugar,Butter
+food,2,Which spice is the most expensive by weight?,Saffron,Vanilla,Cinnamon,Pepper
+food,2,Paella is a traditional dish from which country?,Spain,Italy,Mexico,Portugal
+food,2,What is tofu made from?,Soybeans,Rice,Wheat,Peanuts
+food,2,What type of food is brie?,Cheese,Bread,Sausage,Pastry
+food,2,Which grain is used to make popcorn?,Corn,Rice,Wheat,Oats
+food,2,Kimchi is a traditional dish from which country?,Korea,Japan,China,Thailand
+food,3,Which country produces the most coffee?,Brazil,Colombia,Vietnam,Ethiopia
+food,3,What is the main ingredient of hummus?,Chickpeas,Lentils,Kidney beans,Peas
+food,3,Oranges are famous for which vitamin?,Vitamin C,Vitamin D,Vitamin K,Vitamin B12
+food,1,Tomatoes are botanically a fruit.,TRUE,,,
+food,2,Honey can last for thousands of years without spoiling.,TRUE,,,
+food,2,White chocolate contains cocoa solids.,FALSE,,,
+food,2,Peanuts are true nuts.,FALSE,,,
+food,3,"Botanically, bananas are berries.",TRUE,,,
+tech,1,What does 'www' stand for in a web address?,World Wide Web,World Web Wide,Wide World Web,Web World Wide
+tech,2,Who co-founded Microsoft with Paul Allen?,Bill Gates,Steve Jobs,Mark Zuckerberg,Elon Musk
+tech,2,What does CPU stand for?,Central Processing Unit,Computer Personal Unit,Central Program Utility,Core Power Unit
+tech,2,Which company makes the iPhone?,Apple,Samsung,Google,Sony
+tech,2,What does HTML stand for?,HyperText Markup Language,High Tech Modern Language,Hyper Transfer Main Link,Home Tool Markup Language
+tech,2,The Python programming language is named after…,A comedy group,A snake,A video game,A car
+tech,2,What does USB stand for?,Universal Serial Bus,United System Board,Universal System Bridge,Unified Serial Block
+tech,2,Which language is used to style web pages?,CSS,SQL,PHP,Java
+tech,2,Which company develops the Android operating system?,Google,Apple,Microsoft,Nokia
+tech,2,What does GPS stand for?,Global Positioning System,General Path Service,Geo Pointer Satellite,Global Path System
+tech,3,In which year was the first iPhone released?,2007,2005,2010,2001
+tech,3,How many bits are in a byte?,8,4,16,10
+tech,3,Who is known as the inventor of the World Wide Web?,Tim Berners-Lee,Alan Turing,Bill Gates,Vint Cerf
+tech,3,What does AI stand for?,Artificial Intelligence,Automatic Input,Advanced Interface,Analog Information
+tech,3,The first famous computer 'bug' in 1947 was literally a…,Moth,Beetle,Spider,Fly
+tech,1,A smartphone is a type of computer.,TRUE,,,
+tech,2,The first computer mouse was made of wood.,TRUE,,,
+tech,2,Email was invented after the World Wide Web.,FALSE,,,
+tech,3,QR in 'QR code' stands for Quick Response.,TRUE,,,

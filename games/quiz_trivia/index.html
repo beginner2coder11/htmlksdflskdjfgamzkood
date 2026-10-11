@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Quiz Rush</title>
+  <meta name="description" content="Fast, fun trivia: 8 topics, Survival, Lightning and a Daily Challenge.">
+  <meta name="theme-color" content="#4b2bd6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="preload" href="fonts/lilitaone-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="loading">
+  <div id="bg"><i>?</i><i>?</i><i>!</i><i>?</i><i>★</i><i>?</i><i>!</i><i>?</i></div>
+
+  <main id="app">
+    <!-- LOADING -->
+    <section id="screen-loading" class="screen active">
+      <div class="load-bar"><i id="load-fill"></i></div>
+    </section>
+
+    <!-- HOME -->
+    <section id="screen-home" class="screen">
+      <div class="home-top">
+        <div class="pill"><span data-art="coin"></span><b class="coin-count">0</b></div>
+        <button class="icon-btn" id="btn-settings" aria-label="Settings"></button>
+      </div>
+      <button class="player-card" id="player-card">
+        <span class="pc-avatar" id="pc-avatar">🦊</span>
+        <span class="pc-info">
+          <b>Level <span id="pc-level">1</span></b>
+          <span class="pc-bar"><i id="pc-xp"></i></span>
+          <small id="pc-xp-text">0 / 100 XP</small>
+        </span>
+        <span class="pc-stats">Stats ›</span>
+      </button>
+      <div id="logo-wrap"></div>
+      <div class="home-actions">
+        <button class="btn btn-green btn-play" id="btn-play"><span class="bi"></span><span>PLAY</span></button>
+        <div class="home-row">
+          <button class="btn btn-red mode-btn" id="btn-survival"><span data-art="heart"></span><span class="mb"><span>Survival</span><small>Best <b id="best-survival">0</b></small></span></button>
+          <button class="btn btn-blue mode-btn" id="btn-lightning"><span data-art="bolt"></span><span class="mb"><span>Lightning</span><small>Best <b id="best-lightning">0</b></small></span></button>
+        </div>
+        <button class="btn btn-purple mode-btn wide" id="btn-daily"><span data-art="calendar"></span><span class="mb"><span>Daily Challenge</span><small id="daily-state"></small></span></button>
+        <button class="btn btn-orange" id="btn-gift"><span data-art="gift"></span><span>Daily Gift</span><i class="dot" id="gift-dot" hidden></i></button>
+      </div>
+    </section>
+
+    <!-- TOPICS -->
+    <section id="screen-topics" class="screen">
+      <header class="bar">
+        <button class="icon-btn" id="btn-topics-back" aria-label="Back"></button>
+        <h2>Pick a topic</h2>
+        <div class="pill"><span data-art="coin"></span><b class="coin-count">0</b></div>
+      </header>
+      <div id="topic-grid"></div>
+    </section>
+
+    <!-- GAME -->
+    <section id="screen-game" class="screen">
+      <header class="bar">
+        <button class="icon-btn" id="btn-pause" aria-label="Pause"></button>
+        <div class="hud-mid">
+          <div id="hud-progress"><b id="hud-q">1/10</b><div id="hud-dots"></div></div>
+          <div id="hud-lives" hidden></div>
+          <div id="hud-mode" hidden></div>
+        </div>
+        <div class="pill score-pill"><b id="score" data-v="0">0</b></div>
+      </header>
+
+      <div class="q-zone">
+        <div id="timer" hidden>
+          <svg viewBox="0 0 100 100"><circle class="track" cx="50" cy="50" r="45"/><circle id="timer-ring" cx="50" cy="50" r="45"/></svg>
+          <b id="timer-num">15</b>
+        </div>
+        <div id="q-card">
+          <div id="q-chip"></div>
+          <p id="q-text"></p>
+          <div id="streak" hidden></div>
+        </div>
+        <div id="answers" class="answers"></div>
+        <div id="countdown" hidden></div>
+      </div>
+
+      <footer id="lifelines"></footer>
+    </section>
+  </main>
+
+  <div id="modal-root"></div>
+  <canvas id="fx"></canvas>
+  <div id="floaters"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

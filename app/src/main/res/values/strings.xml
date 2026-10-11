@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exit_title">Quit the game?</string>
+    <string name="exit_yes">Quit</string>
+    <string name="exit_no">Keep playing</string>
+    <string name="no_ad">No video available right now. Try again in a moment.</string>
+</resources>

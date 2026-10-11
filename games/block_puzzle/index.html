@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Block Burst</title>
+  <meta name="description" content="Drag blocks onto the board, clear lines, chain combos and beat 100 adventure levels.">
+  <meta name="theme-color" content="#1b1446">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="preload" href="fonts/lilitaone-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="bg"><div id="falling"></div></div>
+
+  <main id="app">
+    <!-- LOADING -->
+    <section id="screen-loading" class="screen active">
+      <div class="loading-blocks"><i></i><i></i><i></i><i></i></div>
+      <div class="load-bar"><i id="load-fill"></i></div>
+    </section>
+
+    <!-- HOME -->
+    <section id="screen-home" class="screen">
+      <div class="home-top">
+        <div class="pill"><span data-art="coin"></span><b class="coin-count">0</b></div>
+        <div class="home-top-r">
+          <button class="icon-btn btn-pink" id="btn-home-shop" aria-label="Skins"><span data-art="palette"></span></button>
+          <button class="icon-btn" id="btn-home-settings" aria-label="Settings"></button>
+        </div>
+      </div>
+      <div id="logo-wrap"></div>
+      <div class="home-best"><span data-art="crown"></span><span>Best</span><b id="home-best">0</b></div>
+      <div class="home-actions">
+        <button class="btn btn-green btn-mode" id="btn-classic">
+          <span class="bi"></span><span class="bt"><span>CLASSIC</span><small>Endless</small></span>
+        </button>
+        <button class="btn btn-purple btn-mode" id="btn-adventure">
+          <span class="bi"></span><span class="bt"><span>ADVENTURE</span><small>Level <b id="home-level">1</b></small></span>
+        </button>
+        <div class="home-row">
+          <button class="btn btn-orange" id="btn-daily"><span data-art="gift"></span><span>Daily</span><i class="dot" id="daily-dot" hidden></i></button>
+          <button class="btn btn-pinkb" id="btn-shop"><span data-art="palette"></span><span>Skins</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVENTURE MAP -->
+    <section id="screen-map" class="screen">
+      <header class="map-top">
+        <button class="icon-btn" id="btn-map-back" aria-label="Back"></button>
+        <h2>Adventure</h2>
+        <div class="pill"><i class="i-star star-ico"></i><b id="map-stars">0</b></div>
+      </header>
+      <div id="map-scroll"><div id="map-inner"></div></div>
+    </section>
+
+    <!-- GAME -->
+    <section id="screen-game" class="screen">
+      <header class="topbar">
+        <button class="icon-btn" id="btn-pause" aria-label="Pause"></button>
+        <div class="hud-center">
+          <div id="hud-classic">
+            <div class="best-line" id="best-wrap"><span data-art="crown"></span><b id="best">0</b></div>
+            <b id="score" class="score">0</b>
+          </div>
+          <div id="hud-adv" hidden>
+            <div class="level-tag">LEVEL <b id="level-num">1</b></div>
+          </div>
+        </div>
+        <div class="pill" id="coins"><span data-art="coin"></span><b class="coin-count">0</b></div>
+      </header>
+
+      <div id="adv-bar" hidden>
+        <div class="goal-chip"><span id="goal-gem"></span><b id="goal-count">0</b><div class="goal-track"><i id="goal-fill"></i></div></div>
+        <div class="moves-chip"><span id="move-stars"><i class="i-star"></i><i class="i-star"></i><i class="i-star"></i></span><small>Moves <b id="moves">0</b></small></div>
+      </div>
+
+      <div id="play-area">
+        <canvas id="play"></canvas>
+        <div id="combo-badge" hidden></div>
+        <div id="target-banner" hidden><span id="target-text"></span><button id="target-cancel" aria-label="Cancel"></button></div>
+      </div>
+
+      <footer class="powerups" id="powerups"></footer>
+    </section>
+  </main>
+
+  <div id="hand" hidden></div>
+  <div id="modal-root"></div>
+  <canvas id="fx"></canvas>
+  <div id="floaters"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/skins.js"></script>
+  <script src="js/play.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

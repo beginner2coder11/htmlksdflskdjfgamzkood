@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Word Connect</title>
+  <meta name="description" content="Swipe letters to make words and fill the crossword. 150 levels across 10 chapters plus a daily puzzle.">
+  <meta name="theme-color" content="#ffd7a8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="preload" href="fonts/lilitaone-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="loading">
+  <div id="scene"></div><div id="scene-next"></div>
+
+  <main id="app">
+    <!-- LOADING -->
+    <section id="screen-loading" class="screen active">
+      <div class="load-bar"><i id="load-fill"></i></div>
+    </section>
+
+    <!-- HOME -->
+    <section id="screen-home" class="screen">
+      <div class="home-top">
+        <div class="pill"><span data-art="coin"></span><b class="coin-count">0</b></div>
+        <button class="icon-btn" id="btn-settings" aria-label="Settings"></button>
+      </div>
+      <div id="logo-wrap"></div>
+      <div class="home-chapter">
+        <b id="home-chapter">Chapter</b>
+        <div class="ch-bar"><i id="home-ch-fill"></i></div>
+        <small id="home-ch-count">0/15</small>
+      </div>
+      <div class="home-actions">
+        <button class="btn btn-green btn-play" id="btn-play"><span class="bi"></span><span id="play-label">LEVEL 1</span></button>
+        <div class="home-row">
+          <button class="btn btn-blue" id="btn-daily"><span data-art="calendar"></span><span>Daily</span><i class="done-badge" id="daily-done" hidden>✓</i></button>
+          <button class="btn btn-purple" id="btn-chapters"><span data-art="book"></span><span>Chapters</span></button>
+        </div>
+        <button class="btn btn-orange" id="btn-gift"><span data-art="gift"></span><span>Daily Gift</span><i class="dot" id="gift-dot" hidden></i></button>
+      </div>
+    </section>
+
+    <!-- CHAPTERS -->
+    <section id="screen-chapters" class="screen">
+      <header class="bar">
+        <button class="icon-btn" id="btn-chapters-back" aria-label="Back"></button>
+        <h2>Chapters</h2>
+        <div class="pill"><span data-art="coin"></span><b class="coin-count">0</b></div>
+      </header>
+      <div id="chapter-list"></div>
+    </section>
+
+    <!-- GAME -->
+    <section id="screen-game" class="screen">
+      <header class="bar">
+        <button class="icon-btn" id="btn-back-home" aria-label="Home"></button>
+        <div class="hud-title"><b id="hud-title">LEVEL 1</b><small id="hud-sub"></small></div>
+        <div class="pill" id="coins"><span data-art="coin"></span><b class="coin-count">0</b></div>
+      </header>
+      <div id="grid-area"><div id="grid"></div></div>
+      <div class="words-left">Words <b id="words-left">0/0</b></div>
+      <div id="preview" class="preview"></div>
+      <div class="play-row">
+        <div class="side">
+          <button class="round-btn" id="btn-shuffle" aria-label="Shuffle"><span data-art="shuffle"></span></button>
+          <button class="round-btn jar" id="btn-jar" aria-label="Bonus words">
+            <span class="jar-fill" id="jar-fill"></span><span data-art="jar"></span><em id="jar-count">0</em>
+          </button>
+        </div>
+        <div id="wheel-area">
+          <div id="wheel"><svg id="wheel-lines"></svg></div>
+        </div>
+        <div class="side">
+          <button class="round-btn" id="btn-hint" aria-label="Hint"><span data-art="hint"></span><em class="cost"><span data-art="coin"></span><b id="hint-cost">25</b></em></button>
+          <button class="round-btn" id="btn-target" aria-label="Reveal a letter"><span data-art="target"></span><em class="cost"><span data-art="coin"></span><b id="target-cost">40</b></em></button>
+        </div>
+      </div>
+      <div id="target-banner" hidden><span>Tap any empty square to reveal it</span><button id="target-cancel" aria-label="Cancel"></button></div>
+    </section>
+  </main>
+
+  <div id="hand" hidden></div>
+  <div id="modal-root"></div>
+  <canvas id="fx"></canvas>
+  <div id="floaters"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/scenery.js"></script>
+  <script src="js/puzzle.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

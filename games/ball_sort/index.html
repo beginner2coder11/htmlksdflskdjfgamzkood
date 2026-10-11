@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Ball Sort</title>
+  <meta name="description" content="Sort the colored balls and liquids into tubes. 500 levels of Ball Sort and Water Sort, fully offline.">
+  <meta name="theme-color" content="#2a1f6e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="preload" href="fonts/lilitaone-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="loading">
+  <canvas id="stage"></canvas>
+
+  <main id="app">
+    <!-- LOADING -->
+    <section id="screen-loading" class="screen active">
+      <div class="load-balls"><i></i><i></i><i></i><i></i></div>
+      <div class="load-bar"><i id="load-fill"></i></div>
+    </section>
+
+    <!-- HOME (a board solves itself behind the menu) -->
+    <section id="screen-home" class="screen">
+      <div class="home-top">
+        <div class="pill"><span data-art="coin"></span><b class="coin-count">0</b></div>
+        <button class="icon-btn" id="btn-settings" aria-label="Settings"></button>
+      </div>
+      <div id="logo-wrap"></div>
+      <div class="mode-switch" id="mode-switch" role="tablist">
+        <button data-mode="balls" role="tab"></button>
+        <button data-mode="water" role="tab"></button>
+        <i class="mode-knob"></i>
+      </div>
+      <div class="board-slot" id="demo-slot"></div>
+      <div class="home-actions">
+        <div class="chest-bar" id="chest-bar"><span data-art="chestClosed"></span><div class="cb-track"><i id="chest-fill"></i><b id="chest-txt">0/5</b></div></div>
+        <button class="btn btn-green btn-play" id="btn-play"><span class="bi"></span><span id="play-label">LEVEL 1</span></button>
+        <button class="btn btn-orange btn-daily" id="btn-daily"><span data-art="daily"></span><span>Daily Challenge</span><small id="daily-sub"></small><i class="dot" id="daily-dot" hidden></i></button>
+        <div class="home-row">
+          <button class="tile-btn" id="btn-levels"><span data-art="levels"></span><b>Levels</b></button>
+          <button class="tile-btn" id="btn-shop"><span data-art="shop"></span><b>Shop</b></button>
+          <button class="tile-btn" id="btn-missions"><span data-art="missions"></span><b>Missions</b><i class="dot" id="missions-dot" hidden></i></button>
+          <button class="tile-btn" id="btn-gift"><span data-art="gift"></span><b>Gift</b><i class="dot" id="gift-dot" hidden></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEVELS -->
+    <section id="screen-levels" class="screen">
+      <header class="lv-head">
+        <button class="icon-btn" id="btn-levels-back" aria-label="Back"></button>
+        <div class="lv-title"><b id="lv-mode">Ball Sort</b><small><span data-art="star"></span> <span id="lv-stars">0</span></small></div>
+        <div class="pill small"><span data-art="coin"></span><b class="coin-count">0</b></div>
+      </header>
+      <div class="lv-scroll" id="lv-scroll"><div id="lv-list"></div></div>
+    </section>
+
+    <!-- GAME -->
+    <section id="screen-game" class="screen">
+      <header class="topbar">
+        <button class="icon-btn" id="btn-home" aria-label="Home"></button>
+        <div class="lvl-info">
+          <div class="lvl-name"><b id="lvl-title">LEVEL 1</b><span class="badge" id="lvl-badge" hidden></span></div>
+          <div class="lvl-meta"><span class="mini-stars" id="mini-stars"></span><span>Moves <b id="moves">0</b></span></div>
+        </div>
+        <button class="icon-btn" id="btn-pause" aria-label="Settings"></button>
+      </header>
+      <div class="board-slot" id="board-slot"></div>
+      <div id="tut" hidden></div>
+      <div class="hand" id="hand" hidden>👆</div>
+      <nav class="toolbar">
+        <button class="tool" id="t-restart"><span data-art="restart"></span><b>Restart</b></button>
+        <button class="tool" id="t-undo"><span data-art="undo"></span><b>Undo</b><em id="undo-count">5</em></button>
+        <button class="tool" id="t-tube"><span data-art="tube"></span><b>+Tube</b><em id="tube-cost"></em></button>
+        <button class="tool" id="t-hint"><span data-art="hint"></span><b>Hint</b><em id="hint-cost"></em></button>
+      </nav>
+    </section>
+  </main>
+
+  <div id="modal-root"></div>
+  <canvas id="fx"></canvas>
+  <div id="floaters"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/skins.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

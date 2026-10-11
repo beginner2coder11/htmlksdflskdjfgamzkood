@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Idle Tycoon</title>
+  <meta name="description" content="Build a snack empire from a single lemonade stand. Hire managers, earn while you're away and become a tycoon. Plays fully offline.">
+  <meta name="theme-color" content="#2a1f6e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="preload" href="fonts/lilitaone-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="loading">
+  <main id="app">
+    <!-- LOADING -->
+    <section id="screen-loading" class="screen active">
+      <div id="logo-wrap"></div>
+      <div class="load-bar"><i id="load-fill"></i></div>
+    </section>
+
+    <!-- GAME (idle games open straight into the empire) -->
+    <section id="screen-game" class="screen">
+      <header class="topbar">
+        <div class="cash-wrap">
+          <b id="cash">$0</b>
+          <small id="rate">$0 / sec</small>
+        </div>
+        <div class="top-right">
+          <div class="pill gem-pill" id="gem-pill"><span data-art="gem"></span><b class="gem-count">0</b></div>
+          <div class="top-btns">
+            <button class="round-btn" id="btn-missions" aria-label="Missions"><span data-art="missions"></span><i class="dot" id="missions-dot" hidden></i></button>
+            <button class="round-btn" id="btn-gift" aria-label="Daily gift"><span data-art="gift"></span><i class="dot" id="gift-dot" hidden></i></button>
+            <button class="round-btn" id="btn-settings" aria-label="Settings"></button>
+          </div>
+        </div>
+      </header>
+      <div class="status-row">
+        <div class="combo" id="combo" hidden></div>
+        <div class="star-badge" id="star-badge" hidden></div>
+      </div>
+      <button id="balloon" hidden aria-label="Lucky delivery"></button>
+
+      <div class="controls">
+        <div class="buy-mode" id="buy-mode">
+          <button data-m="1">×1</button><button data-m="10">×10</button><button data-m="100">×100</button><button data-m="max">MAX</button>
+        </div>
+        <button class="boost-btn" id="btn-boost"><span data-art="boost"></span><span id="boost-txt">×2 profit</span></button>
+      </div>
+
+      <div class="panel" id="panel">
+        <div class="tab-page" id="page-biz"></div>
+        <div class="tab-page" id="page-mgr" hidden></div>
+        <div class="tab-page" id="page-upg" hidden></div>
+        <div class="tab-page" id="page-stars" hidden></div>
+        <div class="tab-page" id="page-shop" hidden></div>
+      </div>
+
+      <nav class="tabbar" id="tabbar">
+        <button data-tab="biz" class="on"><span>🏪</span><b>Business</b></button>
+        <button data-tab="mgr"><span>👔</span><b>Managers</b><i class="dot" id="mgr-dot" hidden></i></button>
+        <button data-tab="upg"><span>⬆️</span><b>Upgrades</b><i class="dot" id="upg-dot" hidden></i></button>
+        <button data-tab="stars"><span>⭐</span><b>Stars</b><i class="dot" id="stars-dot" hidden></i></button>
+        <button data-tab="shop"><span>💎</span><b>Shop</b></button>
+      </nav>
+      <div class="hint" id="hint" hidden></div>
+    </section>
+  </main>
+
+  <div id="modal-root"></div>
+  <canvas id="fx"></canvas>
+  <div id="floaters"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/econ.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/street.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

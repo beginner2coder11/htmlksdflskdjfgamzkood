@@ -1,0 +1,11 @@
+Bundled fonts (Latin subset, WOFF2), from Google Fonts:
+
+- Lilita One — Copyright 2011 Juan Montoreano
+- Fredoka   — Copyright 2016 The Fredoka Project Authors
+
+Both are licensed under the SIL Open Font License, Version 1.1:
+https://openfontlicense.org
+
+The OFL allows bundling and redistributing these fonts with software,
+including commercial products, as long as the fonts themselves are not
+sold on their own and this notice stays with them.
