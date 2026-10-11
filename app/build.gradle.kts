@@ -59,8 +59,9 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            // No R8: it strips classes the Ads SDK's WorkManager/Room create by
+            // reflection (WorkDatabase_Impl) and the app crashes on launch.
+            isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("release")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
