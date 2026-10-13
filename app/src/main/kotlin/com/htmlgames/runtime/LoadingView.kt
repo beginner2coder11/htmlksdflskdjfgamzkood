@@ -106,12 +106,14 @@ class LoadingView(
 
     override fun onSizeChanged(w: Int, h: Int, ow: Int, oh: Int) {
         bgPaint.shader = LinearGradient(0f, 0f, 0f, h.toFloat(), intArrayOf(top, bottom), null, Shader.TileMode.CLAMP)
-        glowPaint.shader = RadialGradient(w / 2f, h * 0.40f, w * 0.75f,
+        glowPaint.shader = RadialGradient(w / 2f, iconY(h.toFloat(), min(w * 0.34f, 132 * dp)), w * 0.75f,
             intArrayOf(Color.argb(120, Color.red(accent()), Color.green(accent()), Color.blue(accent())), Color.TRANSPARENT), null, Shader.TileMode.CLAMP)
         titlePaint.textSize = min(34 * dp, w * 0.085f)
         labelPaint.textSize = 15 * dp
     }
     private fun accent() = mix(accentDeep, accentLight, 0.5f)
+    /** Icon centre: the whole group (icon → label, ≈ icon + 156dp tall) centred at 44% of the height. */
+    private fun iconY(h: Float, size: Float) = h * 0.44f - 78 * dp
 
     override fun onDraw(c: Canvas) {
         val w = width.toFloat(); val h = height.toFloat()
@@ -128,7 +130,10 @@ class LoadingView(
         // icon: rounded square with a white rim, bobbing
         val size = min(w * 0.34f, 132 * dp)
         val cx = w / 2f
-        val cy = h * 0.40f + sin(t * 2.4f) * 6 * dp
+        // icon + name + bar sit as one group a little above the middle of the screen
+        val bob = sin(t * 2.4f) * 6 * dp * min(1f, t / 0.6f)
+        val base = iconY(h, size)
+        val cy = base + bob
         val r = size * 0.24f
         val box = RectF(cx - size / 2, cy - size / 2, cx + size / 2, cy + size / 2)
         c.drawRoundRect(RectF(box.left, box.top + 8 * dp, box.right, box.bottom + 8 * dp), r, r, shadowPaint)
@@ -145,7 +150,7 @@ class LoadingView(
 
         // progress bar
         val bw = min(w * 0.72f, 320 * dp); val bh = 22 * dp
-        val bx = cx - bw / 2; val by = h * 0.72f
+        val bx = cx - bw / 2; val by = base + size / 2 + 104 * dp
         val track = RectF(bx, by, bx + bw, by + bh)
         c.drawRoundRect(track, bh / 2, bh / 2, trackPaint)
         trackRim.strokeWidth = 2 * dp
