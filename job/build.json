@@ -1,0 +1,21 @@
+{
+  "buildId": "mv6a8ntsgcpu5767",
+  "slug": "merge-fruits",
+  "dir": "merge_fruits",
+  "target": "apk",
+  "app": {
+    "name": "Merge Fruits",
+    "package": "com.freelance5455.mergefruitsc8f",
+    "versionName": "1.0.0",
+    "versionCode": 1,
+    "splashColor": "#1b1446",
+    "accentColor": ""
+  },
+  "ads": {
+    "enabled": true,
+    "appId": "ca-app-pub-3940256099942544~3347511713",
+    "interstitial": "ca-app-pub-3940256099942544/1033173712",
+    "rewarded": "ca-app-pub-3940256099942544/5224354917",
+    "banner": "ca-app-pub-3940256099942544/6300978111"
+  }
+}
