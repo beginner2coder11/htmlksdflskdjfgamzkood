@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var web: WebView
     private lateinit var loader: WebViewAssetLoader
     private var banner: AdBanner? = null
-    private var spinner: View? = null
+    private var loading: LoadingView? = null
+    private var adsTotal = 0
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +66,10 @@ class MainActivity : AppCompatActivity() {
                 allowFileAccess = false
                 allowContentAccess = false
                 offscreenPreRaster = true
+            }
+            // page download drives the first half of the loading bar
+            webChromeClient = object : android.webkit.WebChromeClient() {
+                override fun onProgressChanged(view: WebView, p: Int) { progress(p / 100f * 0.55f, 0.62f) }
             }
             webViewClient = object : WebViewClient() {
                 override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? =
@@ -103,15 +108,18 @@ class MainActivity : AppCompatActivity() {
             addView(web, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1f))
             addView(slot, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, slotHeight))
         }
-        // small spinner under the launch icon while the game and ads load
-        val dp = resources.displayMetrics.density
-        spinner = android.widget.ProgressBar(this).apply {
-            indeterminateTintList = android.content.res.ColorStateList.valueOf(Color.WHITE)
-            alpha = 0.8f
-        }
+        // game-style loading screen on top until the game is ready (see tryReveal)
+        val color = { key: String, def: String -> runCatching { Color.parseColor(settings.optString(key).ifBlank { def }) }.getOrDefault(Color.parseColor(def)) }
+        loading = LoadingView(
+            this,
+            settings.optString("appName").ifBlank { applicationInfo.loadLabel(packageManager).toString() },
+            runCatching { android.graphics.BitmapFactory.decodeResource(resources, R.drawable.app_icon) }.getOrNull(),
+            color("splashColor", "#1b1446"),
+            color("accentColor", "#ffcf33"),
+        )
         setContentView(FrameLayout(this).apply {
             addView(column, FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT))
-            addView(spinner, FrameLayout.LayoutParams((32 * dp).toInt(), (32 * dp).toInt(), android.view.Gravity.CENTER).apply { topMargin = (110 * dp).toInt() })
+            addView(loading, FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT))
         })
 
         if (adsOn) {
@@ -127,6 +135,7 @@ class MainActivity : AppCompatActivity() {
             banner = b
             val loaders = listOfNotNull<Any>(b, inter, reward)
             adsPending = loaders.size
+            adsTotal = loaders.size
             val one = { runOnUiThread { adsPending--; tryReveal() } }
             b?.onSettled = one; inter?.onSettled = one; reward?.onSettled = one
             b?.attach(slot)
@@ -160,7 +169,16 @@ class MainActivity : AppCompatActivity() {
      * game has been drawing smoothly again for a moment (ad loading keeps the shared
      * renderer busy for a while after the "loaded" callbacks).
      */
+    private fun progress(v: Float, creep: Float) {
+        loading?.let { it.target = v; it.creepTo = maxOf(it.creepTo, creep) }
+    }
+
     private fun tryReveal() {
+        // loading bar: page 0–55% · painted 65% · each ad +25%/n up to 90% · smooth frames 100%
+        if (pageReady) {
+            val adsDone = if (adsTotal == 0) 1f else (adsTotal - adsPending.coerceAtLeast(0)).toFloat() / adsTotal
+            progress(0.65f + 0.25f * adsDone, if (adsPending > 0) 0.88f else 0.97f)
+        }
         if (revealed || isFinishing || !pageReady || adsPending > 0) return
         if (!smooth) {
             if (!smoothCheck) {
@@ -171,11 +189,21 @@ class MainActivity : AppCompatActivity() {
             return
         }
         revealed = true
+        progress(1f, 1f)
         android.util.Log.d("GameApk", "game shown ${android.os.SystemClock.uptimeMillis() - createdAt} ms after launch")
-        spinner?.let { (it.parent as? android.view.ViewGroup)?.removeView(it) }
-        web.animate().alpha(1f).setDuration(220).withEndAction {
-            window.setBackgroundDrawableResource(android.R.color.black)
-        }.start()
+        web.alpha = 1f
+        window.setBackgroundDrawableResource(android.R.color.black)
+        // let the bar visibly reach 100% ("Let's play!"), then fade the loading screen away
+        val lv = loading ?: return
+        val started = android.os.SystemClock.uptimeMillis()
+        fun fadeWhenFull() {
+            if (lv.finished || android.os.SystemClock.uptimeMillis() - started > 900) {
+                lv.animate().alpha(0f).scaleX(1.06f).scaleY(1.06f).setStartDelay(250).setDuration(320).withEndAction {
+                    (lv.parent as? android.view.ViewGroup)?.removeView(lv); loading = null
+                }.start()
+            } else lv.postOnAnimation { fadeWhenFull() }
+        }
+        fadeWhenFull()
     }
 
     private fun confirmExit() {

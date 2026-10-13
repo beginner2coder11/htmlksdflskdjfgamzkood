@@ -11,6 +11,10 @@ const MAIN = path.join(ROOT, "app/src/main"), WEB = path.join(MAIN, "assets/web"
 const job = JSON.parse(fs.readFileSync(path.join(B, "build.json"), "utf8"));
 const config = JSON.parse(fs.readFileSync(path.join(B, "config.json"), "utf8"));
 
+// each game's brand color: the loading screen's glow, sparkles and progress bar
+const GAME_COLOR = { merge_fruits: "#ff5f8f", block_puzzle: "#7d5cff", stack_tower: "#ff9a2e", word_connect: "#36d35a",
+  quiz_trivia: "#ffd23a", endless_runner: "#3fa6ff", snake_arena: "#7dff5a", ball_sort: "#ff3d4f", knife_hit: "#ffcf33", idle_tycoon: "#3fd84a" };
+const HEX = /^#[0-9a-f]{6}$/i;
 const safeDir = String(job.dir || "").replace(/[^a-z0-9_]/gi, "");
 const src = path.join(ROOT, "games", safeDir);
 if (!safeDir || !fs.existsSync(path.join(src, "index.html"))) throw new Error(`unknown game "${job.dir}"`);
@@ -47,7 +51,9 @@ fs.writeFileSync(path.join(WEB, "js/config.js"),
 
 fs.writeFileSync(path.join(MAIN, "assets/app_settings.json"), JSON.stringify({
   appName: job.app.name, package: job.app.package, versionName: job.app.versionName, versionCode: job.app.versionCode,
-  splashColor: job.app.splashColor, ads: job.ads
+  splashColor: job.app.splashColor,
+  accentColor: HEX.test(job.app.accentColor || "") ? job.app.accentColor : GAME_COLOR[safeDir] || "#ffcf33",
+  ads: job.ads
 }, null, 2));
 
 const icon = path.join(B, "icon.png");
