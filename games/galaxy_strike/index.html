@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Galaxy Strike</title>
+  <meta name="description" content="Blast alien swarms, grab power-ups and beat giant bosses in this neon space shooter. Plays fully offline.">
+  <meta name="theme-color" content="#05031a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="loading">
+  <canvas id="stage"></canvas>
+
+  <main id="app">
+    <!-- LOADING -->
+    <section id="screen-loading" class="screen active">
+      <div class="load-logo"><span>GALAXY</span><span>STRIKE</span></div>
+      <div class="load-bar"><i id="load-fill"></i></div>
+      <small class="load-tip" id="load-tip">Charging plasma cannons…</small>
+    </section>
+
+    <!-- HOME (the ship flies a demo run behind the menu) -->
+    <section id="screen-home" class="screen">
+      <div class="home-top">
+        <div class="chip coin-chip"><span data-art="coin"></span><b class="coin-count">0</b></div>
+        <button class="sq-btn" id="btn-settings" aria-label="Settings"></button>
+      </div>
+      <div id="logo-wrap"></div>
+      <p class="tagline" id="tagline"></p>
+      <div class="home-best">
+        <span><small>BEST SCORE</small><b id="home-score">0</b></span>
+        <span><small>BEST SECTOR</small><b id="home-sector">0</b></span>
+      </div>
+      <div class="home-actions">
+        <button class="neo-btn play" id="btn-play"><span>LAUNCH</span><small id="home-ship">Falcon</small></button>
+        <div class="home-row">
+          <button class="tile" id="btn-hangar"><span data-art="hangar"></span><b>Hangar</b><i class="dot" id="hangar-dot" hidden></i></button>
+          <button class="tile" id="btn-upgrades"><span data-art="upgrades"></span><b>Upgrades</b><i class="dot" id="upgrades-dot" hidden></i></button>
+          <button class="tile" id="btn-missions"><span data-art="missions"></span><b>Missions</b><i class="dot" id="missions-dot" hidden></i></button>
+          <button class="tile" id="btn-gift"><span data-art="gift"></span><b>Daily</b><i class="dot" id="gift-dot" hidden></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME HUD -->
+    <section id="screen-game" class="screen">
+      <header class="hud-top">
+        <button class="sq-btn small" id="btn-pause" aria-label="Pause"></button>
+        <div class="hud-score">
+          <b id="score">0</b>
+          <div class="combo" id="combo" hidden><span id="combo-n">0</span> COMBO <em id="combo-x">x1</em><i id="combo-bar"></i></div>
+        </div>
+        <div class="chip coin-chip small"><span data-art="coin"></span><b id="run-coins">0</b></div>
+      </header>
+      <div class="hud-row">
+        <div class="hull" id="hull"></div>
+        <span class="sector-label" id="sector-label">SECTOR 1 · WAVE 1</span>
+      </div>
+      <div class="boss-bar" id="boss-bar" hidden><span id="boss-name">BOSS</span><div class="bb"><i id="boss-fill"></i></div></div>
+      <div class="powers" id="powers"></div>
+      <button class="bomb-btn" id="btn-bomb" aria-label="Bomb"><span data-art="bomb"></span><b id="bomb-n">1</b></button>
+      <div class="drag-hint" id="drag-hint" hidden><i></i><span>DRAG to fly · your ship fires by itself</span></div>
+    </section>
+  </main>
+
+  <div id="banner" hidden><b id="banner-title"></b><small id="banner-sub"></small></div>
+  <div id="modal-root"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

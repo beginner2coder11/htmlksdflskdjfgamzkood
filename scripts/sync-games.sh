@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copies the 10 game templates (with README + tools: they go into the buyer's source ZIP) into games/.
+# Copies the game templates (with README + tools: they go into the buyer's source ZIP) into games/.
 # Run after changing a game in ~/Desktop/web2app/games, then commit + push main.
 set -e
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
