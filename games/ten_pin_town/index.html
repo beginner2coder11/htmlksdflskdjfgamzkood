@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Ten Pin Town</title>
+  <meta name="description" content="Ten-pin bowling in a 1950s atomic-age alley: swipe to roll, curve your swipe to hook, 10-frame scoring, 24 Spare Shots challenges and five balls. Plays fully offline.">
+  <meta name="theme-color" content="#1aa6a0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="lobby">
+  <canvas id="lane"></canvas>
+
+  <header class="hud">
+    <div class="hud-top">
+      <button class="chip sq" id="h-pause" aria-label="Pause">II</button>
+      <div class="card" id="card"></div>
+      <div class="pinmap" id="pinmap" aria-label="Pins standing"></div>
+    </div>
+    <p class="sub" id="h-sub"></p>
+  </header>
+  <div class="call" id="call" hidden></div>
+  <p class="hint" id="hint">SWIPE UP TO BOWL · CURVE IT TO HOOK</p>
+
+  <section class="lobby" id="lobby">
+    <div class="lobby-top"><span class="chip small">🪙 <b data-coins>0</b></span><button class="chip small" id="l-settings">Settings</button></div>
+    <div class="sign">
+      <i class="burst b1"></i><i class="burst b2"></i>
+      <span class="sign-small">welcome to</span>
+      <h1><span>Ten Pin</span><span>Town</span></h1>
+      <span class="sign-bar">BOWLING · OPEN LATE</span>
+    </div>
+    <p class="tag" id="tagline"></p>
+    <svg class="lobby-art" viewBox="0 0 220 90" aria-hidden="true">
+      <ellipse cx="110" cy="84" rx="100" ry="6" fill="rgba(15,95,99,.5)"/>
+      <g transform="translate(118 82) rotate(-28)"><path d="M0 -60 C7 -60 8 -52 6 -45 C4 -40 4 -36 8 -28 C14 -16 12 -4 8 0 L-8 0 C-12 -4 -14 -16 -8 -28 C-4 -36 -4 -40 -6 -45 C-8 -52 -7 -60 0 -60Z" fill="#fff4dc" stroke="#2b2a33" stroke-width="2.5"/><rect x="-5" y="-43" width="10" height="2.5" fill="#e8473c"/><rect x="-5" y="-38.5" width="10" height="2" fill="#e8473c"/></g><g transform="translate(150 82)"><path d="M0 -60 C7 -60 8 -52 6 -45 C4 -40 4 -36 8 -28 C14 -16 12 -4 8 0 L-8 0 C-12 -4 -14 -16 -8 -28 C-4 -36 -4 -40 -6 -45 C-8 -52 -7 -60 0 -60Z" fill="#fff4dc" stroke="#2b2a33" stroke-width="2.5"/><rect x="-5" y="-43" width="10" height="2.5" fill="#e8473c"/><rect x="-5" y="-38.5" width="10" height="2" fill="#e8473c"/></g><g transform="translate(182 82) rotate(14)"><path d="M0 -60 C7 -60 8 -52 6 -45 C4 -40 4 -36 8 -28 C14 -16 12 -4 8 0 L-8 0 C-12 -4 -14 -16 -8 -28 C-4 -36 -4 -40 -6 -45 C-8 -52 -7 -60 0 -60Z" fill="#fff4dc" stroke="#2b2a33" stroke-width="2.5"/><rect x="-5" y="-43" width="10" height="2.5" fill="#e8473c"/><rect x="-5" y="-38.5" width="10" height="2" fill="#e8473c"/></g>
+      <circle cx="58" cy="58" r="24" fill="#e8473c" stroke="#2b2a33" stroke-width="2.5"/><circle cx="50" cy="50" r="3.5" fill="#2b2a33"/><circle cx="60" cy="47" r="3.5" fill="#2b2a33"/><circle cx="56" cy="60" r="3.5" fill="#2b2a33"/>
+      <path d="M8 60 h22 M12 70 h16" stroke="#fff4dc" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <div class="menu">
+      <button class="tile go" id="l-open"><b>Open Play</b><small id="l-best">10 frames · best —</small></button>
+      <button class="tile" id="l-spare"><b>Spare Shots</b><small id="l-spares">0 / 24 cleared</small></button>
+      <div class="row"><button class="chip" id="l-balls">Ball shop</button><button class="chip" id="l-how">How to bowl</button></div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

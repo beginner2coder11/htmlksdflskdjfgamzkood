@@ -8,7 +8,7 @@ set -e
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
 WEB="$HERE/.."
 PACK1="galaxy_strike merge_fruits block_puzzle stack_tower word_connect quiz_trivia endless_runner snake_arena ball_sort knife_hit idle_tycoon"
-PACK2="putt_park moon_hopper mole_patrol pixel_peak flow_works rink_rally crate_escape pixel_logic hoop_swish beat_lanes"
+PACK2="putt_park moon_hopper mole_patrol pixel_peak flow_works rink_rally crate_escape pixel_logic hoop_swish ten_pin_town"
 mkdir -p "$HERE/games"
 copy() {
   [ -f "$1/$2/index.html" ] || { echo "missing $1/$2" >&2; exit 1; }
