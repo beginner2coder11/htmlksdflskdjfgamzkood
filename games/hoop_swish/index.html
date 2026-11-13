@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Hoop Swish</title>
+  <meta name="description" content="Swipe-to-shoot street basketball on a graffiti court: swishes, fire streaks, a sliding hoop and two modes. Plays fully offline.">
+  <meta name="theme-color" content="#141414">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="crew">
+  <canvas id="court"></canvas>
+  <header class="hud">
+    <button class="sticker sq" id="h-pause" aria-label="Pause">II</button>
+    <div class="tagbox"><small>SCORE</small><b id="h-score">0</b></div>
+    <div class="tagbox" id="h-clock-box"><small>TIME</small><b id="h-clock">60</b></div>
+    <div class="tagbox"><small>STREAK</small><b id="h-streak">0</b></div>
+  </header>
+  <div class="fire" id="h-fire" hidden>🔥 ON FIRE ×2</div>
+  <p class="how" id="h-how">SWIPE UP TO SHOOT</p>
+
+  <section class="crew" id="crew">
+    <div class="top"><span class="sticker small">🪙 <b data-coins>0</b></span><button class="sticker small" id="c-settings">SETTINGS</button></div>
+    <h1 class="spray"><span>HOOP</span><span>SWISH</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="modes" id="modes"></div>
+    <button class="sticker" id="c-balls">BALLS</button>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

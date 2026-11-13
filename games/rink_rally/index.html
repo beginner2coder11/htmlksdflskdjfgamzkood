@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Rink Rally</title>
+  <meta name="description" content="Groovy 1970s air hockey: climb a ladder of six rivals, play a quick match or two players on one phone. Plays fully offline.">
+  <meta name="theme-color" content="#2a1a10">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="lobby">
+  <canvas id="rink"></canvas>
+  <header class="board">
+    <button class="knob" id="b-pause" aria-label="Pause">II</button>
+    <div class="side you"><small id="n-me">YOU</small><b class="flip" id="s-me">0</b></div>
+    <span class="to">TO <b id="s-to">7</b></span>
+    <div class="side them"><b class="flip" id="s-cpu">0</b><small id="n-cpu">DISCO DAN</small></div>
+  </header>
+
+  <section class="lobby" id="lobby">
+    <div class="sun" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <h1><span>Rink</span><span>Rally</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="menu">
+      <button class="groovy" id="l-ladder"><b>Ladder</b><small id="l-ladder-sub">Rival 1 of 6</small></button>
+      <button class="groovy alt" id="l-quick"><b>Quick match</b><small>pick any rival you've met</small></button>
+      <button class="groovy alt2" id="l-two"><b>Two players</b><small>one phone, top vs bottom</small></button>
+      <div class="pair"><button class="chip" id="l-tables">Tables</button><button class="chip" id="l-settings">Settings</button></div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

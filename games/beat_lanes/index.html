@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Beat Lanes</title>
+  <meta name="description" content="A four-lane rhythm game in shiny Y2K chrome: six synth songs, three difficulties, holds, combos and grades. Plays fully offline.">
+  <meta name="theme-color" content="#d7c9ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="lobby">
+  <canvas id="stage"></canvas>
+  <header class="hud">
+    <button class="jelly sq" id="h-pause" aria-label="Pause">II</button>
+    <div class="pod"><small id="h-song">BUBBLE POP</small><b id="h-score">0</b></div>
+    <div class="life"><i id="h-life"></i></div>
+  </header>
+
+  <section class="lobby" id="lobby">
+    <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h1 class="chrome"><span>BEAT</span><span>LANES</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="diffs" id="diffs"><button data-d="easy">EASY</button><button data-d="normal" class="on">NORMAL</button><button data-d="hard">HARD</button></div>
+    <div class="songs" id="songs"></div>
+    <div class="row"><button class="jelly" id="l-how">HOW TO PLAY</button><button class="jelly" id="l-settings">SETTINGS</button></div>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

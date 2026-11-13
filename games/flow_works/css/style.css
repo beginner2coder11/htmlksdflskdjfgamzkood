@@ -1,0 +1,77 @@
+/* FLOW WORKS — engineering blueprint: cyanotype blue, fine white grid, drafting
+   lines, stencil type, a title block and a red APPROVED stamp. */
+:root { --blue: #123a6b; --blue-hi: #1b4d8a; --line: #e8f1ff; --water: #5fd4ff; --red: #ff6b5a; --mono: "DIN Alternate", "Bahnschrift", "Roboto Mono", ui-monospace, Menlo, monospace; }
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body { height: 100%; overflow: hidden; color: var(--line); font-family: var(--mono); user-select: none; -webkit-user-select: none; touch-action: manipulation;
+  background: radial-gradient(120% 80% at 50% 30%, var(--blue-hi), var(--blue)); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(232,241,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(232,241,255,.07) 1px, transparent 1px), linear-gradient(rgba(232,241,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(232,241,255,.12) 1px, transparent 1px); background-size: 16px 16px, 16px 16px, 80px 80px, 80px 80px; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+[hidden] { display: none !important; }
+.draft { padding: 11px 14px; border: 1.5px solid var(--line); letter-spacing: .18em; font-size: 13px; position: relative; background: rgba(18,58,107,.6); }
+.draft::before, .draft::after { content: ""; position: absolute; width: 8px; height: 8px; border: 1.5px solid var(--water); }
+.draft::before { left: -5px; top: -5px; border-right: 0; border-bottom: 0; } .draft::after { right: -5px; bottom: -5px; border-left: 0; border-top: 0; }
+.draft:active { background: rgba(95,212,255,.2); }
+.draft.big { font-size: 18px; padding: 16px; background: var(--line); color: var(--blue); }
+.draft.sq { width: 44px; height: 44px; padding: 0; letter-spacing: 0; }
+.draft:disabled { opacity: .35; }
+
+.index { position: fixed; inset: 0; display: none; flex-direction: column; gap: 18px; max-width: 460px; margin: 0 auto; padding: max(16px, env(safe-area-inset-top)) 22px max(22px, env(safe-area-inset-bottom)); }
+body[data-v="index"] .index { display: flex; }
+.head { display: flex; justify-content: space-between; align-items: center; } .code { font-size: 12px; letter-spacing: .2em; opacity: .7; }
+.title { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.title svg { width: 100%; max-width: 300px; }
+.run { animation: run 1s linear infinite; } @keyframes run { to { stroke-dashoffset: -20; } }
+.title h1 { font-size: clamp(56px, 18vw, 84px); line-height: .9; letter-spacing: .06em; font-weight: 700; }
+.title p { letter-spacing: .24em; font-size: 12px; opacity: .8; }
+.spec { display: grid; grid-template-columns: repeat(3, auto 1fr); gap: 6px 10px; padding: 10px 0; border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); align-items: baseline; }
+.spec span { font-size: 10px; letter-spacing: .2em; opacity: .7; } .spec b { font-size: 22px; }
+
+.work { position: fixed; inset: 0; display: none; flex-direction: column; max-width: 560px; margin: 0 auto; }
+body[data-v="work"] .work { display: flex; }
+.bar { display: flex; gap: 8px; align-items: center; padding: max(10px, env(safe-area-inset-top)) 12px 6px; }
+.m { flex: 1; text-align: center; border-left: 1.5px solid rgba(232,241,255,.4); line-height: 1.1; }
+.m small { display: block; font-size: 10px; letter-spacing: .2em; opacity: .7; } .m b { font-size: 20px; }
+.board { flex: 1; min-height: 0; display: grid; place-items: center; padding: 6px 10px; }
+#sheet { width: 100%; height: 100%; max-height: 100%; touch-action: manipulation; }
+.foot { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 6px 12px max(16px, env(safe-area-inset-bottom)); }
+.foot small { width: 100%; text-align: center; font-size: 10px; letter-spacing: .2em; opacity: .6; }
+
+/* svg pieces */
+.ref { fill: rgba(232,241,255,.7); font: 600 14px var(--mono); text-anchor: middle; }
+.dim { fill: rgba(232,241,255,.7); font: 12px var(--mono); text-anchor: middle; letter-spacing: 2px; }
+.tb { fill: var(--line); font: 12px var(--mono); letter-spacing: 1.5px; }
+.tile { cursor: pointer; }
+.cell { fill: rgba(232,241,255,.03); stroke: rgba(232,241,255,.25); stroke-width: 1; stroke-dasharray: 4 4; transition: fill .2s; }
+.tile:active .cell { fill: rgba(95,212,255,.12); }
+.spin { transform-origin: 50px 50px; transition: transform .18s cubic-bezier(.3,1.5,.5,1); }
+.wall { stroke: var(--line); stroke-width: 26; stroke-linecap: square; }
+.chan { stroke: var(--blue); stroke-width: 14; stroke-linecap: square; transition: stroke .2s; }
+.hub { fill: var(--line); } .outlet { fill: var(--blue); stroke: var(--line); stroke-width: 5; transition: fill .2s; }
+.pump { fill: var(--water); stroke: var(--line); stroke-width: 5; } .pumpTri { fill: var(--blue); }
+.tile.wet .chan { stroke: var(--water); stroke-dasharray: 10 8; animation: water .6s linear infinite; }
+.tile.wet .outlet { fill: var(--water); }
+@keyframes water { to { stroke-dashoffset: -18; } }
+.tile.rush .cell { fill: rgba(95,212,255,.14); }
+.lockmark { opacity: 0; pointer-events: none; transition: opacity .2s; } .tile.locked .lockmark { opacity: 1; } .tile.locked .cell { stroke: var(--water); stroke-dasharray: none; }
+.tile.nope .spin { animation: nope .25s; } @keyframes nope { 50% { transform: rotate(var(--d, 0deg)) scale(.92); } }
+.stampText { fill: var(--red); font: 900 54px var(--mono); text-anchor: middle; letter-spacing: 8px; }
+#stamp.slam { animation: slam .35s cubic-bezier(.3,1.6,.5,1); transform-box: fill-box; transform-origin: center; }
+@keyframes slam { from { opacity: 0; scale: 2.5; } }
+
+.modal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 18px; background: rgba(8,26,50,.7); }
+.card { width: min(360px, 100%); max-height: 88vh; overflow-y: auto; padding: 22px 20px; border: 1.5px solid var(--line); background: var(--blue); display: flex; flex-direction: column; gap: 14px; text-align: center; animation: draw .4s ease-out; }
+@keyframes draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.card h3 { font-size: 26px; letter-spacing: .14em; }
+.card p { opacity: .8; font-size: 14px; letter-spacing: .06em; }
+.card .rows { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; text-align: left; font-size: 13px; letter-spacing: .14em; padding: 10px 0; border-top: 1px dashed rgba(232,241,255,.5); border-bottom: 1px dashed rgba(232,241,255,.5); }
+.stars { font-size: 34px; letter-spacing: 10px; color: var(--water); } .stars .off { color: rgba(232,241,255,.2); }
+.acts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } .acts .wide { grid-column: 1 / -1; }
+.sheets { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.sheets button { aspect-ratio: 1; border: 1px solid rgba(232,241,255,.5); font-size: 13px; position: relative; }
+.sheets button i { position: absolute; bottom: 1px; left: 0; right: 0; font-style: normal; font-size: 8px; color: var(--water); }
+.sheets button.cur { background: var(--line); color: var(--blue); } .sheets button:disabled { opacity: .25; }
+.opt { display: flex; justify-content: space-between; padding: 12px 4px; border-bottom: 1px dashed rgba(232,241,255,.4); letter-spacing: .14em; font-size: 13px; }
+.ad-sim { position: fixed; inset: 0; z-index: 50; background: rgba(8,26,50,.92); display: grid; place-items: center; }
+.ad-sim-card { padding: 24px; border: 1.5px solid var(--line); background: var(--blue); text-align: center; width: 260px; letter-spacing: .12em; }
+.ad-sim-tag { display: inline-block; padding: 2px 10px; background: var(--water); color: var(--blue); }
+.ad-sim-count { display: block; font-size: 52px; margin: 8px 0; }

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Flow Works</title>
+  <meta name="description" content="A blueprint pipe puzzle: rotate every tile until one network carries water from the pump with no open ends. 60 levels. Plays fully offline.">
+  <meta name="theme-color" content="#123a6b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-v="index">
+  <section class="index" id="index">
+    <div class="head"><span class="code">DWG-FW-001</span><button class="draft" id="i-settings">SETTINGS</button></div>
+    <div class="title"><svg viewBox="0 0 220 120" aria-hidden="true"><path d="M10 60H70V20H150V100H210" fill="none" stroke="#e8f1ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 60H70V20H150V100H210" fill="none" stroke="#5fd4ff" stroke-width="4" stroke-dasharray="10 10" class="run"/><circle cx="10" cy="60" r="10" fill="#e8f1ff"/><rect x="198" y="88" width="24" height="24" rx="4" fill="#5fd4ff"/></svg>
+      <h1>FLOW<br>WORKS</h1><p id="tagline"></p></div>
+    <div class="spec"><span>LEVEL</span><b id="i-level">1</b><span>STARS</span><b id="i-stars">0</b><span>HINTS</span><b id="i-hints">3</b></div>
+    <button class="draft big" id="i-play">OPEN SHEET <span id="i-play-n">01</span></button>
+    <button class="draft" id="i-levels">ALL SHEETS</button>
+  </section>
+
+  <section class="work" id="work">
+    <header class="bar">
+      <button class="draft sq" id="w-menu" aria-label="Pause">II</button>
+      <div class="m"><small>SHEET</small><b id="w-level">01</b></div>
+      <div class="m"><small>TURNS</small><b id="w-turns">0</b></div>
+      <div class="m"><small>FLOW</small><b id="w-flow">0%</b></div>
+    </header>
+    <div class="board"><svg id="sheet" xmlns="http://www.w3.org/2000/svg"></svg></div>
+    <footer class="foot">
+      <button class="draft" id="w-hint">HINT · <b id="w-hints">3</b></button>
+      <button class="draft" id="w-reset">RESET</button>
+      <small>TAP = ROTATE · HOLD = LOCK</small>
+    </footer>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

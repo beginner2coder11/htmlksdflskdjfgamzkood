@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Pixel Logic</title>
+  <meta name="description" content="Picture logic puzzles printed in two inks: read the numbers, fill the squares and reveal 24 risograph prints. Plays fully offline.">
+  <meta name="theme-color" content="#f7f3ea">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="studio">
+  <section class="studio" id="studio">
+    <div class="mast"><span>NO. <b id="m-count">0</b>/24</span><button class="ink" id="m-settings">SETTINGS</button></div>
+    <h1 class="riso"><span class="a">PIXEL</span><span class="b">LOGIC</span><span class="a2">PIXEL</span><span class="b2">LOGIC</span></h1>
+    <p class="sub" id="tagline"></p>
+    <div class="books" id="books"></div>
+  </section>
+
+  <section class="press" id="press">
+    <header class="bar">
+      <button class="ink sq" id="p-back" aria-label="Pause">II</button>
+      <div class="lbl"><small id="p-book">POSTCARDS</small><b id="p-name">No. 1</b></div>
+      <div class="lbl"><small>TIME</small><b id="p-time">0:00</b></div>
+      <div class="lbl"><small>INKED</small><b id="p-fill">0/0</b></div>
+    </header>
+    <div class="stage"><div class="puzzle" id="puzzle"></div></div>
+    <footer class="tools">
+      <div class="modes"><button class="on" data-m="1" aria-label="Fill">■ FILL</button><button data-m="2" aria-label="Cross">✕ CROSS</button></div>
+      <button class="ink" id="p-undo">UNDO</button>
+      <button class="ink pink" id="p-hint">HINT <b id="p-hints">3</b></button>
+    </footer>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

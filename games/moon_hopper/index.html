@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Moon Hopper</title>
+  <meta name="description" content="Land a lunar module on glowing vector terrain: 16 missions across moons and planets, wind, fuel and a free-flight mode. Plays fully offline.">
+  <meta name="theme-color" content="#020a05">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="control">
+  <canvas id="scope"></canvas>
+  <div class="scan" aria-hidden="true"></div>
+  <header class="strip"><button class="key sq" id="h-pause" aria-label="Pause">II</button><span id="h-title">MISSION</span><span class="rec">● LIVE</span></header>
+  <footer class="controls">
+    <div class="rot"><button class="key big" data-k="left" aria-label="Rotate left">⟲</button><button class="key big" data-k="right" aria-label="Rotate right">⟳</button></div>
+    <button class="key thrust" data-k="thrust" aria-label="Thrust">THRUST</button>
+  </footer>
+
+  <section class="control" id="control">
+    <div class="panel head"><span>MISSION CONTROL</span><span id="c-clock">00:00:00</span></div>
+    <h1><span>MOON</span><span>HOPPER</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="panel"><div class="row3"><div><small>LANDINGS</small><b id="c-land">0</b></div><div><small>STARS</small><b id="c-stars">0</b></div><div><small>BEST HOPS</small><b id="c-hops">0</b></div></div></div>
+    <div class="missions" id="missions"></div>
+    <div class="pair"><button class="key wide" id="c-free">FREE FLIGHT</button><button class="key wide" id="c-settings">SETTINGS</button></div>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

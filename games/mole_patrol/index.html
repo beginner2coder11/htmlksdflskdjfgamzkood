@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Mole Patrol</title>
+  <meta name="description" content="A gouache garden logic puzzle: clear the hedges, read the numbers and flag the sleeping moles. Four sizes plus a daily garden. Plays fully offline.">
+  <meta name="theme-color" content="#f6eedd">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="gate">
+  <section class="gate" id="gate">
+    <div class="hills" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="sign"><h1>Mole<br>Patrol</h1><p id="tagline"></p></div>
+    <div class="peeker" aria-hidden="true"><i class="m"></i></div>
+    <div class="sizes" id="sizes"></div>
+    <div class="row"><button class="pebble" id="g-daily">🌼 Daily garden<i id="g-daily-done" hidden>✓</i></button><button class="pebble" id="g-how">How to play</button></div>
+    <div class="row"><span class="pebble seeds">🌱 <b data-seeds>0</b> seeds</span><button class="pebble" id="g-settings">Settings</button></div>
+  </section>
+
+  <section class="yard" id="yard">
+    <header class="top">
+      <button class="pebble sq" id="y-back" aria-label="Pause">II</button>
+      <span class="pebble">🐾 <b id="y-moles">10</b></span>
+      <span class="pebble">⏱ <b id="y-time">0</b></span>
+      <button class="pebble" id="y-hint">💡 <b id="y-hint-cost">15</b></button>
+    </header>
+    <div class="scroller"><div class="plot" id="plot"></div></div>
+    <footer class="tools">
+      <div class="switch" id="mode"><button class="on" data-m="dig">⛏ Dig</button><button data-m="flag">🚩 Flag</button></div>
+      <small>long-press a hedge to flag it</small>
+    </footer>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

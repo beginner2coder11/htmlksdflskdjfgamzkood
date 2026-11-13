@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Putt Park</title>
+  <meta name="description" content="Storybook mini golf painted in watercolor: 12 holes with sand, water, slopes, mushrooms and moving gates. Plays fully offline.">
+  <meta name="theme-color" content="#fbf6ea">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="cover">
+  <canvas id="green"></canvas>
+
+  <header class="hud">
+    <button class="ink sq" id="h-pause" aria-label="Pause">II</button>
+    <div class="leaf"><small id="h-hole">Hole 1</small><b id="h-name">First Steps</b></div>
+    <div class="leaf"><small>Par</small><b id="h-par">2</b></div>
+    <div class="leaf"><small>Strokes</small><b id="h-strokes">0</b></div>
+  </header>
+  <div class="power" id="power" hidden><i id="power-fill"></i></div>
+  <div class="ribbon" id="ribbon" hidden></div>
+
+  <section class="page" id="cover">
+    <div class="book">
+      <div class="wash w1"></div><div class="wash w2"></div><div class="wash w3"></div>
+      <p class="kicker">a little book of</p>
+      <h1>Putt<br>Park</h1>
+      <p class="tag" id="tagline"></p>
+      <div class="flag"><i></i><span></span></div>
+    </div>
+    <div class="chapters" id="chapters"></div>
+    <div class="row"><button class="ink" id="c-balls">Ball colours</button><button class="ink" id="c-settings">Settings</button></div>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

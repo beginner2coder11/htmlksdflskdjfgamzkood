@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Pixel Peak</title>
+  <meta name="description" content="An 8-bit platformer on a retro handheld: run, jump, stomp and climb 24 levels across three worlds. Plays fully offline.">
+  <meta name="theme-color" content="#d8d2c2">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="console">
+    <div class="bezel">
+      <div class="led" id="led"></div>
+      <canvas id="screen" width="512" height="448"></canvas>
+      <p class="brand">PIXEL PEAK <i>8-BIT</i></p>
+    </div>
+    <div class="pad">
+      <div class="dpad">
+        <button data-k="up" aria-label="Up" class="u"></button>
+        <button data-k="left" aria-label="Left" class="l"></button>
+        <button data-k="right" aria-label="Right" class="r"></button>
+        <button data-k="down" aria-label="Down" class="d"></button>
+        <i class="hub"></i>
+      </div>
+      <div class="ab">
+        <button data-k="b" class="b" aria-label="B">B</button>
+        <button data-k="a" class="a" aria-label="A">A</button>
+      </div>
+    </div>
+    <div class="ss">
+      <button data-k="select" aria-label="Select"><i></i><span>SELECT</span></button>
+      <button data-k="start" aria-label="Start"><i></i><span>START</span></button>
+    </div>
+    <div class="grill" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="opts"><button id="o-sound">♪ SOUND</button><button id="o-music">♫ MUSIC</button></div>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

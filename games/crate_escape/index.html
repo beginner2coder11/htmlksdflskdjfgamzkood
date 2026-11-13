@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Crate Escape</title>
+  <meta name="description" content="A wooden sliding-block puzzle box: slide the blocks and free the red crate. 60 solver-checked puzzles. Plays fully offline.">
+  <meta name="theme-color" content="#f3e6cf">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="shelf">
+  <section class="shelf" id="shelf">
+    <div class="sign"><h1>Crate<br>Escape</h1><p id="tagline"></p></div>
+    <div class="stats"><span>⭐ <b id="s-stars">0</b></span><span>🧩 <b id="s-done">0</b>/60</span><span>💡 <b id="s-hints">3</b></span></div>
+    <div class="packs" id="packs"></div>
+    <div class="row"><button class="peg" id="s-wood">Wood</button><button class="peg" id="s-settings">Settings</button></div>
+  </section>
+
+  <section class="table" id="table">
+    <header class="top">
+      <button class="peg sq" id="t-back" aria-label="Pause">II</button>
+      <div class="tag"><small id="t-pack">Beginner</small><b id="t-level">Puzzle 1</b></div>
+      <div class="tag"><small>Moves</small><b id="t-moves">0</b></div>
+      <div class="tag"><small>Best</small><b id="t-min">0</b></div>
+    </header>
+    <div class="wrap"><div class="frame"><div class="box" id="box"><div class="gate" aria-hidden="true"></div><div class="blocks" id="blocks"></div></div></div></div>
+    <footer class="tools">
+      <button class="peg" id="t-undo">↶ Undo</button>
+      <button class="peg" id="t-reset">⟲ Reset</button>
+      <button class="peg go" id="t-hint">💡 Hint <b id="t-hints">3</b></button>
+    </footer>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+  <script src="js/config.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

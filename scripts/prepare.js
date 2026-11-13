@@ -13,7 +13,10 @@ const config = JSON.parse(fs.readFileSync(path.join(B, "config.json"), "utf8"));
 
 // each game's brand color: the loading screen's glow, sparkles and progress bar
 const GAME_COLOR = { galaxy_strike: "#3fd8ff", merge_fruits: "#ff5f8f", block_puzzle: "#7d5cff", stack_tower: "#ff9a2e", word_connect: "#36d35a",
-  quiz_trivia: "#ffd23a", endless_runner: "#3fa6ff", snake_arena: "#7dff5a", ball_sort: "#ff3d4f", knife_hit: "#ffcf33", idle_tycoon: "#3fd84a" };
+  quiz_trivia: "#ffd23a", endless_runner: "#3fa6ff", snake_arena: "#7dff5a", ball_sort: "#ff3d4f", knife_hit: "#ffcf33", idle_tycoon: "#3fd84a",
+  // pack 2 (htmltoapk.com/html-games/)
+  putt_park: "#6fae5c", moon_hopper: "#39ff88", mole_patrol: "#7cc35c", pixel_peak: "#8bac0f", flow_works: "#2f7de1",
+  rink_rally: "#e8862a", crate_escape: "#d6453a", pixel_logic: "#ff4f9a", hoop_swish: "#ff7a1a", beat_lanes: "#c49bff" };
 const HEX = /^#[0-9a-f]{6}$/i;
 const safeDir = String(job.dir || "").replace(/[^a-z0-9_]/gi, "");
 const src = path.join(ROOT, "games", safeDir);
