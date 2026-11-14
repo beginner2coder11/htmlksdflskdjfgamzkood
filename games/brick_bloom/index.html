@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Brick Bloom</title>
+  <meta name="description" content="A Bauhaus brick breaker with 60 levels, power-ups, bombs and lasers. Plays fully offline.">
+  <meta name="theme-color" content="#f3ead8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="home">
+  <canvas id="stage"></canvas>
+
+  <!-- HOME -->
+  <section class="screen" id="home">
+    <div class="topbar">
+      <span class="coins"><i class="coin"></i><b data-coins>0</b></span>
+      <button class="icon-btn" id="btn-settings" aria-label="Settings">⚙</button>
+    </div>
+    <div class="poster">
+      <div class="shape s-circle"></div><div class="shape s-tri"></div><div class="shape s-square"></div><div class="shape s-bar"></div>
+      <h1 class="logo"><span>BRICK</span><span>BLOOM</span></h1>
+      <p class="tag" id="tagline"></p>
+    </div>
+    <div class="stats"><div><small>STARS</small><b id="h-stars">0</b></div><div><small>LEVEL</small><b id="h-level">1</b></div><div><small>BEST</small><b id="h-best">0</b></div></div>
+    <button class="btn big red" id="btn-play">PLAY <small id="play-level">Level 1</small></button>
+    <div class="row3">
+      <button class="btn blue" id="btn-levels">Levels</button>
+      <button class="btn yellow" id="btn-shop">Shop</button>
+      <button class="btn green" id="btn-daily">Gift<i class="dot" id="daily-dot" hidden></i></button>
+    </div>
+  </section>
+
+  <!-- LEVELS -->
+  <section class="screen" id="levels">
+    <div class="topbar"><button class="icon-btn" data-back aria-label="Back">←</button><h2>Levels</h2><span class="coins"><i class="star"></i><b id="l-stars">0</b></span></div>
+    <div class="level-grid" id="level-grid"></div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="screen" id="shop">
+    <div class="topbar"><button class="icon-btn" data-back aria-label="Back">←</button><h2>Shop</h2><span class="coins"><i class="coin"></i><b data-coins>0</b></span></div>
+    <div class="tabs"><button class="tab on" data-tab="paddles">Paddles</button><button class="tab" data-tab="balls">Balls</button></div>
+    <div class="shop-grid" id="shop-grid"></div>
+  </section>
+
+  <!-- HUD -->
+  <section class="screen" id="hud">
+    <div class="hud">
+      <button class="icon-btn small" id="btn-pause" aria-label="Pause">II</button>
+      <div class="hud-mid"><small id="hud-level">LEVEL 1</small><b id="hud-score">0</b></div>
+      <div class="lives" id="hud-lives"></div>
+    </div>
+    <div class="power-bar" id="power-bar"></div>
+  </section>
+
+  <div id="modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

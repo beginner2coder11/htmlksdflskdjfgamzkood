@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Lane Rush</title>
+  <meta name="description" content="A clay-toy traffic racer: weave through cars, chain near misses, boost with nitro and unlock six cars. Plays fully offline.">
+  <meta name="theme-color" content="#a8d98a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="garage">
+  <canvas id="road"></canvas>
+
+  <!-- in-game HUD -->
+  <div class="hud" id="hud">
+    <div class="hud-top">
+      <button class="puff sm" id="g-pause" aria-label="Pause">II</button>
+      <div class="puff stat"><small>metres</small><b id="g-dist">0</b></div>
+      <div class="puff stat"><small>score</small><b id="g-score">0</b></div>
+      <div class="puff stat coin"><small>coins</small><b id="g-coins">0</b></div>
+    </div>
+    <div class="combo" id="g-combo" hidden></div>
+    <div class="area" id="g-area" hidden></div>
+    <div class="powerups" id="g-powers"></div>
+    <button class="nitro" id="g-nitro" aria-label="Nitro"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" class="track"/><circle cx="50" cy="50" r="44" class="fill" id="g-nitro-ring"/></svg><span>⚡</span><small>HOLD</small></button>
+    <p class="steer-hint" id="g-hint">drag anywhere to steer</p>
+  </div>
+
+  <!-- garage (home) -->
+  <section class="screen" id="garage">
+    <div class="bar"><span class="puff pill">🪙 <b data-coins>0</b></span><button class="puff sm" id="s-settings" aria-label="Settings">⚙</button></div>
+    <h1 class="logo"><span>Lane</span><span>Rush</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="showroom">
+      <button class="puff arrow" id="car-prev" aria-label="Previous car">‹</button>
+      <canvas id="car-view" width="320" height="320"></canvas>
+      <button class="puff arrow" id="car-next" aria-label="Next car">›</button>
+    </div>
+    <div class="car-name"><b id="car-name">Bean</b><div class="meters" id="car-meters"></div></div>
+    <button class="puff big" id="car-action">Drive!</button>
+    <div class="modes"><button class="puff mode on" data-mode="endless">🛣️ Endless</button><button class="puff mode" data-mode="twoway">↕️ Two-Way</button></div>
+    <div class="row2"><button class="puff" id="s-missions">🎯 Missions<i class="dot" id="m-dot" hidden></i></button><button class="puff" id="s-records">🏆 Records</button></div>
+  </section>
+
+  <div class="sheet" id="sheet" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

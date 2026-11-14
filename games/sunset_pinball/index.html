@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Sunset Pinball</title>
+  <meta name="description" content="A tropical-sunset pinball table with real flipper physics, missions, multiball and a dot-matrix display. Plays fully offline.">
+  <meta name="theme-color" content="#2a1035">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-mode="title">
+  <header class="dmd-wrap"><canvas id="dmd" width="512" height="64"></canvas>
+    <div class="dmd-side"><span>BALL <b id="d-ball">1</b></span><span><b id="d-mult">1</b>X</span></div>
+    <button class="pause" id="b-pause" aria-label="Pause">II</button>
+  </header>
+  <canvas id="table"></canvas>
+  <div class="touch-hint" id="touch-hint" hidden><span>◀ LEFT FLIPPER</span><span>RIGHT FLIPPER ▶</span></div>
+
+  <section class="title" id="title">
+    <div class="poster">
+      <div class="sun"></div>
+      <h1><span>Sunset</span><em>Pinball</em></h1>
+      <p id="tagline"></p>
+    </div>
+    <button class="chrome-btn" id="b-start">INSERT COIN · PLAY</button>
+    <div class="marquee-row">
+      <button class="pill" id="b-scores">High scores</button>
+      <button class="pill" id="b-tables">Tables</button>
+      <button class="pill" id="b-rules">Rules</button>
+      <button class="pill" id="b-settings">Settings</button>
+    </div>
+    <p class="credit">LEFT/RIGHT half of the screen = flippers · HOLD then RELEASE to launch</p>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

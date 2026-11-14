@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Bug Barricade</title>
+  <meta name="description" content="A sketchbook tower defense: doodle squirt guns, swatters, honey, sun lenses and frogs to stop the bugs reaching your picnic. Plays fully offline.">
+  <meta name="theme-color" content="#fbfaf4">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-v="cover">
+  <canvas id="field"></canvas>
+
+  <!-- HUD -->
+  <header class="hud">
+    <button class="doodle sq" id="h-pause" aria-label="Pause">II</button>
+    <span class="chip">🥪 <b id="h-lives">20</b></span>
+    <span class="chip">🪙 <b id="h-coins">0</b></span>
+    <span class="chip">🐜 <b id="h-wave">0/25</b></span>
+  </header>
+  <footer class="dock">
+    <button class="doodle" id="d-speed">▶ 1×</button>
+    <button class="doodle go" id="d-wave">Send wave 1 →</button>
+  </footer>
+  <div class="pop" id="pop" hidden></div>
+  <div class="banner" id="banner" hidden></div>
+
+  <!-- COVER -->
+  <section class="page" id="cover">
+    <div class="book">
+      <div class="spiral"></div>
+      <h1>Bug<br><span>Barricade</span></h1>
+      <p id="tagline"></p>
+      <div class="parade" aria-hidden="true"><i>🐜</i><i>🐞</i><i>🐝</i><i>🐛</i><i>🐜</i></div>
+      <div class="basket">🧺</div>
+    </div>
+    <button class="doodle big go" id="c-play">Play!</button>
+    <div class="pair"><button class="doodle" id="c-bugbook">📒 Bug book</button><button class="doodle" id="c-settings">✏️ Settings</button></div>
+  </section>
+
+  <!-- MAPS -->
+  <section class="page" id="maps">
+    <div class="ptop"><button class="doodle sq" data-cover aria-label="Back">←</button><h2>Pick a spot</h2><span class="chip">⭐ <b id="m-stars">0</b></span></div>
+    <div class="maplist" id="maplist"></div>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

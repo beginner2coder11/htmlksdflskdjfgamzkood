@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Gem Mine</title>
+  <meta name="description" content="A lantern-lit match-3: swap cut gems, make specials, break ice and dig 50 levels deep. Plays fully offline.">
+  <meta name="theme-color" content="#1b120c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <canvas id="stage"></canvas>
+
+  <section class="page" id="p-home">
+    <div class="topline">
+      <span class="plaque coins">🪙 <b data-coins>0</b></span>
+      <button class="brass-btn sq" id="go-settings" aria-label="Settings">⚙</button>
+    </div>
+    <div class="entrance">
+      <div class="arch"><div class="arch-in"><span class="cart">🛒</span></div></div>
+      <div class="sign"><h1>Gem&nbsp;Mine</h1><p id="tagline"></p></div>
+    </div>
+    <div class="depth"><span>Current depth</span><b id="home-depth">Level 1</b></div>
+    <button class="brass-btn big" id="go-play">Descend ▼</button>
+    <div class="row">
+      <button class="wood-btn" id="go-levels">🪜 Shaft</button>
+      <button class="wood-btn" id="go-shop">🛠️ Supplies</button>
+      <button class="wood-btn" id="go-dig">⛏️ Lucky dig<i class="pip" id="dig-pip" hidden></i></button>
+    </div>
+  </section>
+
+  <section class="page" id="p-levels">
+    <div class="topline"><button class="brass-btn sq" data-home aria-label="Back">◀</button><h2>The Shaft</h2><span class="plaque">⭐ <b id="lv-stars">0</b></span></div>
+    <div class="shaft" id="shaft"></div>
+  </section>
+
+  <section class="page" id="p-shop">
+    <div class="topline"><button class="brass-btn sq" data-home aria-label="Back">◀</button><h2>Supplies</h2><span class="plaque coins">🪙 <b data-coins>0</b></span></div>
+    <div class="ledger" id="ledger"></div>
+  </section>
+
+  <section class="page" id="p-game">
+    <div class="hud">
+      <button class="brass-btn sq sm" id="go-pause" aria-label="Pause">II</button>
+      <div class="moves plaque"><small>Moves</small><b id="hud-moves">20</b></div>
+      <div class="goals plaque" id="hud-goals"></div>
+    </div>
+    <div class="scorebar"><div class="fill" id="hud-fill"></div><i class="mk" id="mk1"></i><i class="mk" id="mk2"></i><i class="mk" id="mk3"></i><b id="hud-score">0</b></div>
+    <div class="tools" id="tools"></div>
+    <div class="armed-tip" id="armed-tip" hidden>Tap a gem to use it · <button id="disarm">cancel</button></div>
+  </section>
+
+  <div class="dialog" id="dialog" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

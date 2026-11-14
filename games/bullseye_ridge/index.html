@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Bullseye Ridge</title>
+  <meta name="description" content="A calm, minimal archery game: read the wind, draw your bow and follow the arrow across 30 mountain stages. Plays fully offline.">
+  <meta name="theme-color" content="#e9efe9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-s="menu">
+  <canvas id="view"></canvas>
+
+  <div class="hud" id="hud">
+    <div class="hud-row">
+      <button class="ghost" id="h-pause" aria-label="Pause">II</button>
+      <div class="cell"><small id="h-stage">Stage 1</small><b id="h-points">0</b></div>
+      <div class="cell"><small>Arrows</small><span class="quiver" id="h-quiver"></span></div>
+      <div class="cell wind"><small>Wind</small><b><i id="h-wind-arrow">→</i> <span id="h-wind">0.0</span></b></div>
+    </div>
+    <div class="dist" id="h-dist">30 m</div>
+    <p class="tip" id="h-tip">Drag back anywhere, then let go</p>
+  </div>
+
+  <section class="menu" id="menu">
+    <div class="mtop"><span class="coins">◦ <b data-coins>0</b></span><button class="ghost" id="m-settings">Settings</button></div>
+    <div class="mark">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="60" r="40" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="60" r="24" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="60" r="8" fill="#b8924a"/><path d="M8 100 L60 60" stroke="currentColor" stroke-width="1.5"/></svg>
+    </div>
+    <h1>Bullseye<br>Ridge</h1>
+    <p class="sub" id="tagline"></p>
+    <nav class="list">
+      <button class="line" id="m-play"><span>Continue</span><em id="m-next">Stage 1</em></button>
+      <button class="line" id="m-stages"><span>Stages</span><em id="m-stars">0 ★</em></button>
+      <button class="line" id="m-trial"><span>Wind trial</span><em id="m-trialbest">best 0</em></button>
+      <button class="line" id="m-bows"><span>Bows</span><em id="m-bow">Ash Longbow</em></button>
+    </nav>
+  </section>
+
+  <div class="sheet" id="sheet" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

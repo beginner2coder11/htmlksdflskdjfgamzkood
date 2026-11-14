@@ -16,7 +16,10 @@ const GAME_COLOR = { galaxy_strike: "#3fd8ff", merge_fruits: "#ff5f8f", block_pu
   quiz_trivia: "#ffd23a", endless_runner: "#3fa6ff", snake_arena: "#7dff5a", ball_sort: "#ff3d4f", knife_hit: "#ffcf33", idle_tycoon: "#3fd84a",
   // pack 2 (htmltoapk.com/html-games/)
   putt_park: "#6fae5c", moon_hopper: "#39ff88", mole_patrol: "#7cc35c", pixel_peak: "#8bac0f", flow_works: "#2f7de1",
-  rink_rally: "#e8862a", crate_escape: "#d6453a", pixel_logic: "#ff4f9a", hoop_swish: "#ff7a1a", ten_pin_town: "#1aa6a0" };
+  rink_rally: "#e8862a", crate_escape: "#d6453a", pixel_logic: "#ff4f9a", hoop_swish: "#ff7a1a", ten_pin_town: "#1aa6a0",
+  // pack 3 (htmltoapp.dev/html-games/)
+  brick_bloom: "#e63b2e", bubble_reef: "#3fd0e0", gem_mine: "#e0a43a", tile_fuse: "#ff5a1f", hook_reel: "#e85d3a",
+  sunset_pinball: "#ff7a3d", bug_barricade: "#3a7bd5", lane_rush: "#ff8a3d", bullseye_ridge: "#d9473a", spiral_drop: "#ff4fa3" };
 const HEX = /^#[0-9a-f]{6}$/i;
 const safeDir = String(job.dir || "").replace(/[^a-z0-9_]/gi, "");
 const src = path.join(ROOT, "games", safeDir);

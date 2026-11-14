@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Bubble Reef</title>
+  <meta name="description" content="An underwater bubble shooter: pop bubbles, free trapped fish and explore 60 reef levels. Plays fully offline.">
+  <meta name="theme-color" content="#0a4f73">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-view="home">
+  <canvas id="stage"></canvas>
+  <div class="sea-bg" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <section class="view" id="v-home">
+    <header class="bar">
+      <div class="glass pill"><span class="pearl"></span><b data-pearls>0</b></div>
+      <button class="glass round" id="b-settings" aria-label="Settings">⚙︎</button>
+    </header>
+    <div class="hero">
+      <div class="logo"><span class="w1">Bubble</span><span class="w2">Reef</span></div>
+      <p id="tagline"></p>
+      <div class="fishy" aria-hidden="true">🐠</div>
+    </div>
+    <div class="glass panel home-stats">
+      <div><b id="hs-level">1</b><small>Level</small></div>
+      <div><b id="hs-fish">0</b><small>Fish freed</small></div>
+      <div><b id="hs-best">0</b><small>Endless best</small></div>
+    </div>
+    <button class="cta" id="b-play"><span>Dive in</span><small id="play-sub">Level 1</small></button>
+    <div class="grid2">
+      <button class="glass tile" id="b-map"><span>🗺️</span>Reef map</button>
+      <button class="glass tile" id="b-endless"><span>♾️</span>Endless</button>
+      <button class="glass tile" id="b-shop"><span>🛍️</span>Pearl shop</button>
+      <button class="glass tile" id="b-chest"><span>🧰</span>Treasure<i class="badge" id="chest-badge" hidden>!</i></button>
+    </div>
+  </section>
+
+  <section class="view" id="v-map">
+    <header class="bar"><button class="glass round" data-home aria-label="Back">‹</button><h2>Reef map</h2><div class="glass pill">⭐ <b id="map-stars">0</b></div></header>
+    <div class="map-scroll" id="map-scroll"><div class="map" id="map"></div></div>
+  </section>
+
+  <section class="view" id="v-shop">
+    <header class="bar"><button class="glass round" data-home aria-label="Back">‹</button><h2>Pearl shop</h2><div class="glass pill"><span class="pearl"></span><b data-pearls>0</b></div></header>
+    <div class="shop" id="shop"></div>
+    <p class="hint">Boosters are used from the bottom of the screen during a level.</p>
+  </section>
+
+  <section class="view" id="v-game">
+    <header class="hud">
+      <button class="glass round sm" id="b-pause" aria-label="Pause">II</button>
+      <div class="glass hud-box"><small id="h-title">Level 1</small><b id="h-score">0</b></div>
+      <div class="glass hud-box" id="h-fish-box"><small>Fish</small><b id="h-fish">0/0</b></div>
+      <div class="glass hud-box"><small>Shots</small><b id="h-shots">30</b></div>
+    </header>
+    <div class="boosters" id="boosters"></div>
+  </section>
+
+  <div class="sheet" id="sheet" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

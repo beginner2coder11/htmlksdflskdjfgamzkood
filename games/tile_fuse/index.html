@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Tile Fuse</title>
+  <meta name="description" content="Slide the board and fuse equal tiles into the next number. Five modes, undo, wild tiles and a daily board. Plays fully offline.">
+  <meta name="theme-color" content="#f1f0ea">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="menu">
+  <!-- MENU -->
+  <main class="sheet" id="menu">
+    <header class="mast">
+      <div class="mast-l"><span class="k">FIG.</span><span class="k" id="clock-now">00:00</span></div>
+      <button class="mono-btn" id="m-settings" aria-label="Settings">SET</button>
+    </header>
+    <h1 class="title"><span>TILE</span><span>FUSE<sup>®</sup></span></h1>
+    <p class="lede" id="tagline"></p>
+    <div class="spec"><span>TOKENS</span><b id="m-tokens">0</b><span>BEST TILE</span><b id="m-best">0</b><span>GAMES</span><b id="m-games">0</b></div>
+    <ol class="modes" id="modes"></ol>
+    <footer class="ticker"><div id="ticker">1+1=2 — 2+2=3 — 3+3=4 — SLIDE ANY DIRECTION — EQUAL TILES FUSE — ✱ FUSES WITH ANYTHING — </div></footer>
+  </main>
+
+  <!-- GAME -->
+  <main class="sheet" id="play">
+    <header class="mast">
+      <button class="mono-btn" id="g-menu" aria-label="Menu">← MENU</button>
+      <span class="k" id="g-mode">MODE 01 / CLASSIC</span>
+    </header>
+    <div class="scores">
+      <div class="sbox"><small>SCORE</small><b id="g-score">0</b><em id="g-plus"></em></div>
+      <div class="sbox"><small>BEST</small><b id="g-best">0</b></div>
+      <div class="sbox" id="g-clock-box"><small>CLOCK</small><b id="g-clock">120</b></div>
+      <div class="sbox"><small>GOAL</small><b id="g-goal">11</b></div>
+    </div>
+    <div class="board" id="board">
+      <div class="cells" id="cells"></div>
+      <div class="tiles" id="tiles"></div>
+      <div class="stamp" id="stamp" hidden></div>
+    </div>
+    <div class="toolbar">
+      <button class="tool" id="t-undo"><b>UNDO</b><small id="t-undo-n">×2</small></button>
+      <button class="tool" id="t-smash"><b>SMASH</b><small id="t-smash-n">25 TK</small></button>
+      <button class="tool" id="t-new"><b>RESET</b><small>NEW BOARD</small></button>
+    </div>
+    <p class="fine" id="g-fine">SWIPE OR USE ARROW KEYS. EQUAL TILES FUSE INTO THE NEXT NUMBER.</p>
+  </main>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

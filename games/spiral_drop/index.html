@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Spiral Drop</title>
+  <meta name="description" content="Spin the tower and drop the ball through the gaps in this bold Memphis-style arcade game with 100 levels. Plays fully offline.">
+  <meta name="theme-color" content="#ffe7d6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-on="home">
+  <canvas id="tower"></canvas>
+
+  <div class="hud">
+    <div class="prog"><span class="lv" id="h-lv">1</span><div class="track"><i id="h-fill"></i></div><span class="lv next" id="h-next">2</span></div>
+    <div class="score" id="h-score">0</div>
+    <button class="chunky sq" id="h-pause" aria-label="Pause">II</button>
+    <div class="fever" id="h-fever" hidden>FEVER!</div>
+  </div>
+
+  <section class="home" id="home">
+    <div class="shapes" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i></div>
+    <div class="top"><span class="chip">BEST <b id="m-best">0</b></span><button class="chunky sq" id="m-settings" aria-label="Settings">⚙</button></div>
+    <h1><span>SPIRAL</span><span>DROP</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="level-badge"><small>LEVEL</small><b id="m-level">1</b></div>
+    <button class="chunky big" id="m-play">PLAY ▶</button>
+    <div class="row"><button class="chunky" id="m-balls">BALLS</button><button class="chunky" id="m-levels">LEVELS</button></div>
+    <p class="how">DRAG TO SPIN · AVOID THE STRIPES</p>
+  </section>
+
+  <div class="modal" id="modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
