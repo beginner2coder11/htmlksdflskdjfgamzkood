@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Slice Rush</title>
+  <meta name="description" content="Fruit slicing game: swipe to slice flying fruit, chain combos, dodge the bombs. Classic, Arcade and Zen modes, blades and backgrounds to unlock. Plays offline.">
+  <meta name="theme-color" content="#2a1d14">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <div class="score-box"><b id="h-score">0</b><small id="h-best">Best 0</small></div>
+    <div class="h-mid"><div class="timer" id="h-time" hidden>1:00</div><div class="pills" id="h-fx"></div></div>
+    <div class="h-right"><div class="lives" id="h-lives"><i></i><i></i><i></i></div><button class="round" id="h-pause" aria-label="Pause"><i class="ic-pause"></i></button></div>
+  </header>
+
+  <section class="title" id="title">
+    <div class="t-top">
+      <div class="coins"><i class="coin"></i><b data-coins>0</b></div>
+      <div class="t-right"><button class="round" id="t-gift" aria-label="Daily gift">🎁<em class="dot" id="b-gift" hidden></em></button><button class="round" id="t-set" aria-label="Settings">⚙️</button></div>
+    </div>
+    <div class="logo-wrap">
+      <h1 class="logo"><span>SLICE</span><span>RUSH</span></h1><i class="slash"></i>
+      <p class="tag" id="tagline"></p>
+    </div>
+    <div class="t-bottom">
+      <div class="modes" id="modes"></div>
+      <button class="goal-card" id="t-goal"><span class="gc-ico">🎯</span><span class="gc-txt"><small>GOAL <b id="gc-n">1</b></small><b id="gc-text">Score 25 in Classic</b><span class="gc-bar"><i id="gc-fill"></i></span></span><span class="price" id="gc-rew"><i class="coin"></i>50</span></button>
+      <div class="row3"><button class="btn small" id="t-shop">Shop</button><button class="btn small" id="t-goals">Goals</button><button class="btn small" id="t-how">How to play</button></div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

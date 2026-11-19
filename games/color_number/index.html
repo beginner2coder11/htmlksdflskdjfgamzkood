@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Color by Number</title>
+  <meta name="description" content="Color by number pixel art game: pick a colour, tap the matching numbers and watch your picture come alive. 42 pictures, a picture of the day, time-lapse replays. Plays offline.">
+  <meta name="theme-color" content="#f7f3ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="gallery">
+  <!-- painting screen -->
+  <canvas id="view"></canvas>
+  <header class="pbar">
+    <button class="round" id="p-back" aria-label="Back">‹</button>
+    <div class="p-title"><b id="p-name">Picture</b><small id="p-pct">0%</small></div>
+    <button class="round" id="p-fit" aria-label="Fit to screen">⤢</button>
+  </header>
+  <div class="boosts" id="boosts">
+    <button class="boost" data-b="bucket" aria-label="Bucket"><i class="bi">🪣</i><em>3</em></button>
+    <button class="boost" data-b="blast" aria-label="Blast"><i class="bi">💥</i><em>3</em></button>
+    <button class="boost" data-b="find" aria-label="Find"><i class="bi">🔍</i><em>5</em></button>
+  </div>
+  <div class="zooms"><button class="round sm" id="z-in" aria-label="Zoom in">+</button><button class="round sm" id="z-out" aria-label="Zoom out">−</button></div>
+  <div class="armed" id="armed" hidden></div>
+  <footer class="pbottom"><div class="prog-line"><i id="p-bar"></i></div><div class="palette" id="palette"></div></footer>
+
+  <!-- gallery -->
+  <section class="gallery" id="gallery">
+    <div class="g-top">
+      <h1 class="logo"><span>COLOR</span><span>BY NUMBER</span></h1>
+      <div class="t-right"><div class="coins"><i class="coin"></i><b data-coins>0</b></div><button class="round" id="t-gift" aria-label="Daily gift">🎁<em class="dot" id="b-gift" hidden></em></button><button class="round" id="t-set" aria-label="Settings">⚙️</button></div>
+    </div>
+    <button class="today" id="today"><canvas id="today-c"></canvas><span class="td-txt"><small>PICTURE OF THE DAY</small><b id="today-name">Ginger Cat</b><span id="today-sub">Bonus coins · tap to paint</span></span></button>
+    <nav class="tabs" id="tabs"></nav>
+    <div class="cards" id="cards"></div>
+    <p class="foot" id="tagline"></p>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/pictures.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

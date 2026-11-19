@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Bolt Jam</title>
+  <meta name="description" content="Screw puzzle: tap a screw to unscrew it into the toolbox of its colour. Fill the boxes, drop every plate and don't run out of spare holes. 120 levels, plays offline.">
+  <meta name="theme-color" content="#ff9f7a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <button class="round" id="h-pause" aria-label="Pause"><i class="ic-pause"></i></button>
+    <div class="lvl" id="h-lvl"><span id="h-lvl-n">Level 1</span><b class="hard" id="h-hard" hidden>HARD</b></div>
+    <div class="coins"><i class="coin"></i><b id="h-coins">0</b></div>
+  </header>
+
+  <nav class="tools" id="tools">
+    <button class="tool" id="b-restart" aria-label="Restart"><span class="ti">↻</span><small>Restart</small></button>
+    <button class="tool" id="b-hole" aria-label="Extra hole"><span class="ti ti-hole"></span><small>+Hole</small><em id="n-hole">2</em></button>
+    <button class="tool" id="b-drill" aria-label="Drill"><span class="ti ti-drill"></span><small>Drill</small><em id="n-drill">2</em></button>
+  </nav>
+  <p class="drill-tip" id="drill-tip" hidden>Tap ANY screw to drill it out</p>
+
+  <section class="title" id="title">
+    <div class="t-top">
+      <div class="coins"><i class="coin"></i><b data-coins>0</b></div>
+      <div class="t-right"><button class="round" id="t-gift" aria-label="Daily gift">🎁<em class="dot" id="b-gift" hidden></em></button><button class="round" id="t-sound" aria-label="Settings">⚙️</button></div>
+    </div>
+    <div class="logo-wrap">
+      <div class="logo-box"><i class="lb-handle"></i><i class="lb-s s1"></i><i class="lb-s s2"></i><i class="lb-s s3"></i></div>
+      <h1 class="logo"><span>BOLT</span><span>JAM</span></h1>
+      <p class="tag" id="tagline"></p>
+    </div>
+    <div class="t-bottom">
+      <button class="btn big green" id="t-play"><span id="t-play-l">Level 1</span></button>
+      <div class="row3"><button class="btn small" id="t-levels">Levels</button><button class="btn small" id="t-shop">Shop</button><button class="btn small" id="t-how">How to play</button></div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

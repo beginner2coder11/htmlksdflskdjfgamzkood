@@ -16,6 +16,8 @@ const GAME_COLOR = { galaxy_strike: "#3fd8ff", merge_fruits: "#ff5f8f", block_pu
   quiz_trivia: "#ffd23a", endless_runner: "#3fa6ff", snake_arena: "#7dff5a", ball_sort: "#ff3d4f", knife_hit: "#ffcf33", idle_tycoon: "#3fd84a",
   sand_survivors: "#f0a050", turbo_rivals: "#ff6a2a", dash_street: "#2f8fff", meadow_keeper: "#5fb85a", sprint_pals: "#ff8f3a",
   doodle_bridge: "#ff7a5c", breezy_isle: "#3fc8c0", prism_hop: "#9b6bff",
+  bolt_jam: "#ff8a3d", lot_escape: "#2fb4ff", hex_stacks: "#ff5fa2", tile_trio: "#2fc49a", pin_rescue: "#ffc93d", crowd_rush: "#3d8bff",
+  sinkhole: "#7b5cff", penalty_pro: "#2fc46e", sudoku_daily: "#4b6bff", color_number: "#8b5cf6", slice_rush: "#ff7a2e",
   // pack 2 (htmltoapk.com/html-games/)
   putt_park: "#6fae5c", moon_hopper: "#39ff88", mole_patrol: "#7cc35c", pixel_peak: "#8bac0f", flow_works: "#2f7de1",
   rink_rally: "#e8862a", crate_escape: "#d6453a", pixel_logic: "#ff4f9a", hoop_swish: "#ff7a1a", ten_pin_town: "#1aa6a0",

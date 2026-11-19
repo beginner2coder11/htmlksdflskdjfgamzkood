@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Crowd Rush</title>
+  <meta name="description" content="Crowd runner: steer your crowd through the best gates, beat the enemy crowds, dodge obstacles and climb the multiplier stairs. 100 levels, plays offline.">
+  <meta name="theme-color" content="#5ec4ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <button class="round" id="h-pause" aria-label="Pause"><i class="ic-pause"></i></button>
+    <div class="lvl"><span id="h-lvl-n">Level 1</span><b class="hard" id="h-hard" hidden>HARD</b></div>
+    <div class="coins"><i class="coin"></i><b id="h-coins">0</b></div>
+  </header>
+  <div class="goal" id="goal"><span>🏃</span><div class="goal-bar"><i id="g-fill"></i></div><span id="g-end">🏁</span></div>
+
+
+  <section class="title" id="title">
+    <div class="t-top">
+      <div class="coins"><i class="coin"></i><b data-coins>0</b></div>
+      <div class="t-right"><button class="round" id="t-gift" aria-label="Daily gift">🎁<em class="dot" id="b-gift" hidden></em></button><button class="round" id="t-sound" aria-label="Settings">⚙️</button></div>
+    </div>
+    <div class="logo-wrap">
+      <div class="logo-crowd"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <h1 class="logo"><span>CROWD</span><span>RUSH</span></h1>
+      <p class="tag" id="tagline"></p>
+    </div>
+    <div class="t-bottom">
+      <div class="ups"><button class="up" id="u-start"><small>Starting crowd</small><b id="u-start-v">1</b><span class="price" id="u-start-c"></span></button><button class="up" id="u-income"><small>Income</small><b id="u-income-v">×1.0</b><span class="price" id="u-income-c"></span></button></div>
+      <button class="btn big green" id="t-play"><span id="t-play-l">Level 1</span></button>
+      <div class="row3"><button class="btn small" id="t-levels">Levels</button><button class="btn small" id="t-shop">Shop</button><button class="btn small" id="t-how">How to play</button></div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

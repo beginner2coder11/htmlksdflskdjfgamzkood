@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Sudoku Daily</title>
+  <meta name="description" content="Free sudoku game: a new Daily Challenge every day, 150 journey levels and endless Easy, Medium, Hard and Expert puzzles. Notes, smart hints, undo. Plays offline.">
+  <meta name="theme-color" content="#eef2ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <!-- play screen -->
+  <main class="play" id="play">
+    <header class="bar">
+      <button class="round" id="p-back" aria-label="Home">‹</button>
+      <div class="bar-title"><b id="p-title">Medium</b><small id="p-sub">New game</small></div>
+      <button class="round" id="p-pause" aria-label="Pause"><i class="ic-pause"></i></button>
+    </header>
+    <div class="info">
+      <span class="chip" id="i-diff">Medium</span>
+      <span id="i-mist">Mistakes <b>0/3</b></span>
+      <span class="timer" id="i-time">0:00</span>
+    </div>
+    <div class="board-wrap" id="board-wrap"><canvas id="board"></canvas></div>
+    <div class="tip" id="tip" hidden></div>
+    <div class="tools">
+      <button class="tool" id="t-undo"><i class="ti">↶</i><small>Undo</small></button>
+      <button class="tool" id="t-erase"><i class="ti ti-erase"></i><small>Erase</small></button>
+      <button class="tool" id="t-notes"><i class="ti">✎</i><small>Notes</small><em id="t-notes-b">OFF</em></button>
+      <button class="tool" id="t-auto"><i class="ti ti-grid"></i><small>Fill notes</small></button>
+      <button class="tool" id="t-hint"><i class="ti">💡</i><small>Hint</small><em id="t-hint-b">3</em></button>
+    </div>
+    <div class="pad" id="pad"></div>
+  </main>
+
+  <!-- title screen -->
+  <section class="title" id="title">
+    <div class="t-top">
+      <div class="coins"><i class="coin"></i><b data-coins>0</b></div>
+      <div class="t-right"><button class="round" id="t-gift" aria-label="Daily gift">🎁<em class="dot" id="b-gift" hidden></em></button><button class="round" id="t-set" aria-label="Settings">⚙️</button></div>
+    </div>
+    <div class="logo-wrap">
+      <div class="logo-grid" aria-hidden="true"><i>5</i><i></i><i>3</i><i></i><i class="hl">7</i><i></i><i>9</i><i></i><i>1</i></div>
+      <h1 class="logo"><span>SUDOKU</span><span>DAILY</span></h1>
+      <p class="tag" id="tagline"></p>
+    </div>
+    <div class="t-bottom">
+      <button class="daily-card" id="t-daily">
+        <span class="dc-cal"><small id="dc-mon">NOV</small><b id="dc-day">19</b></span>
+        <span class="dc-txt"><b>Daily Challenge</b><small id="dc-sub">Medium · tap to play</small></span>
+        <span class="dc-streak" id="dc-streak">🔥 0</span>
+      </button>
+      <button class="btn big" id="t-continue" hidden>Continue<small id="t-cont-sub"></small></button>
+      <button class="btn big green" id="t-new">New Game</button>
+      <div class="row4"><button class="btn small" id="t-journey">Journey</button><button class="btn small" id="t-cal">Calendar</button><button class="btn small" id="t-shop">Themes</button><button class="btn small" id="t-stats">Stats</button></div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/sudoku.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
