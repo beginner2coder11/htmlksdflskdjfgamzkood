@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Turbo Rivals</title>
+  <meta name="description" content="Arcade street racing against four rivals: hold to drive, slide to steer, draft and overtake to fill your nitro, jump ramps and race through the docks, a desert canyon and a neon city. 30 races, a garage of cars and upgrades. Plays fully offline.">
+  <meta name="theme-color" content="#5fb8e8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <div class="pos"><small>POS</small><b id="h-pos">5TH</b></div>
+    <div class="mid"><small id="h-lvl">LEVEL 1</small><div class="track" id="h-track"><i class="flag"></i></div></div>
+    <div class="spd"><small>KM/H</small><b id="h-kmh">0</b></div>
+  </header>
+  <button class="pause" id="h-pause" aria-label="Pause">II</button>
+  <button class="nitro" id="h-nitro" aria-label="Nitro"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" class="bg"/><circle cx="50" cy="50" r="44" class="fg" id="h-nfill"/></svg><span>NOS</span></button>
+  <p class="hint" id="hint" hidden>HOLD TO DRIVE · SLIDE TO STEER</p>
+
+  <section class="title" id="title">
+    <div class="t-top"><div class="chip"><i class="coin"></i><b data-coins>0</b></div><div class="chip">🏆 <b id="t-wins">0</b></div></div>
+    <h1 class="logo"><span>TURBO</span><span>RIVALS</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="t-bottom">
+      <button class="go" id="t-race">RACE</button>
+      <div class="row3"><button class="sbtn" id="t-garage">Garage</button><button class="sbtn" id="t-gift">Gift<em class="badge" id="b-gift" hidden>!</em></button><button class="sbtn" id="t-sound">Sound</button></div>
+    </div>
+  </section>
+
+  <section class="levels" id="levels">
+    <div class="lv-head"><button class="sq" id="lv-back">‹</button><h2>Races</h2><div class="chip"><i class="coin"></i><b data-coins>0</b></div></div>
+    <div class="venues" id="venues"></div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

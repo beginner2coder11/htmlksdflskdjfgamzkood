@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Sprint Pals</title>
+  <meta name="description" content="A 3-lane endless runner: swipe to change lanes, jump hurdles, slide under signs, run across market roofs and grab coins and power-ups through four zones. Plays fully offline.">
+  <meta name="theme-color" content="#6fd0ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <button class="rbtn" id="h-pause" aria-label="Pause"><i class="i-pause"></i></button>
+    <div class="hud-mid"><b id="h-score">0</b><span class="multi" id="h-mult">x1</span></div>
+    <div class="hud-r"><div class="pill"><i class="coin"></i><b id="h-coins">0</b></div><div class="dist" id="h-dist">0 m</div></div>
+  </header>
+  <div class="powers" id="h-powers"></div>
+  <div class="swipehint" id="swipehint" hidden><span>Swipe ← → to change lanes</span><span>↑ jump · ↓ slide</span></div>
+
+  <section class="title" id="title">
+    <div class="t-top">
+      <div class="pill"><i class="coin"></i><b data-coins>0</b></div>
+      <div class="pill best">BEST <b id="t-best">0</b></div>
+    </div>
+    <h1 class="logo"><span>SPRINT</span><span>PALS</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="t-bottom">
+      <div class="mis-strip" id="mis-strip"></div>
+      <button class="playbtn" id="t-play">TAP TO RUN</button>
+      <nav class="t-nav">
+        <button class="nbtn" id="t-pals"><i class="ni ni-pal"></i>Pals</button>
+        <button class="nbtn" id="t-shop"><i class="ni ni-up"></i>Upgrades</button>
+        <button class="nbtn" id="t-missions"><i class="ni ni-flag"></i>Missions<em class="badge" id="b-mis" hidden></em></button>
+        <button class="nbtn" id="t-gift"><i class="ni ni-gift"></i>Gift<em class="badge" id="b-gift" hidden>!</em></button>
+      </nav>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

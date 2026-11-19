@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Prism Hop</title>
+  <meta name="description" content="Steer a bouncy orb across floating glass tiles through five glowing worlds. Land dead centre for PERFECT combos, fill the Fever meter, ride boost pads and grab gems. Plays fully offline.">
+  <meta name="theme-color" content="#0d2a52">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="menu">
+  <canvas id="view"></canvas>
+
+  <!-- in-run HUD -->
+  <header class="hud" id="hud">
+    <div class="hud-row">
+      <button class="glass round" id="h-pause" aria-label="Pause"><i class="ico-pause"></i></button>
+      <div class="score-box">
+        <b id="h-score">0</b>
+        <span id="h-mult" class="mult" hidden>x2</span>
+      </div>
+      <div class="glass pill gem-pill"><i class="gem-ico"></i><b id="h-gems">0</b></div>
+    </div>
+    <div class="stage-line">
+      <span id="h-world">Aurora Lake</span>
+      <div class="bar"><i id="h-stage"></i></div>
+      <span id="h-stage-n">1</span>
+    </div>
+    <div class="fever" id="h-fever-wrap"><i id="h-fever"></i><span>FEVER</span></div>
+    <div class="powers" id="h-powers"></div>
+  </header>
+  <p class="hint" id="hint" hidden>HOLD &amp; DRAG TO HOP</p>
+  <div class="toast" id="toast" hidden></div>
+
+  <!-- main menu over the attract-mode run -->
+  <section class="menu" id="menu">
+    <div class="menu-top">
+      <div class="glass pill gem-pill"><i class="gem-ico"></i><b data-gems>0</b></div>
+      <div class="glass pill best-pill">BEST <b id="m-best">0</b></div>
+      <div class="menu-top-r">
+        <button class="glass round" id="m-sfx" aria-label="Sound effects"></button>
+        <button class="glass round" id="m-music" aria-label="Music"></button>
+      </div>
+    </div>
+    <div class="logo">
+      <span class="logo-1">PRISM</span>
+      <span class="logo-2">HOP</span>
+      <i class="logo-shine"></i>
+    </div>
+    <p class="tag" id="tagline"></p>
+    <button class="play" id="m-play" aria-label="Play">
+      <span class="play-ring"></span><span class="play-ring r2"></span>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 9 L32 20 L14 31 Z" fill="currentColor" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+    </button>
+    <p class="play-label">TAP TO PLAY</p>
+    <nav class="dock">
+      <button class="dock-btn" id="m-shop"><i class="d-ico orb"></i><span>Orbs</span></button>
+      <button class="dock-btn" id="m-missions"><i class="d-ico flag"></i><span>Missions</span><em class="badge" id="b-missions" hidden></em></button>
+      <button class="dock-btn" id="m-daily"><i class="d-ico gift"></i><span>Daily</span><em class="badge" id="b-daily" hidden>!</em></button>
+      <button class="dock-btn" id="m-how"><i class="d-ico help"></i><span>How</span></button>
+    </nav>
+  </section>
+
+  <div class="sheet-wrap" id="sheet-wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Sandstorm Survivors</title>
+  <meta name="description" content="Pixel-art survival: move with the joystick while your gear fires on its own. Collect gems, level up, pick upgrades, beat the bosses and survive ten minutes. Plays fully offline.">
+  <meta name="theme-color" content="#d8925a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <div class="xp"><i id="h-xp"></i><span id="h-lv">LV 1</span></div>
+    <div class="row">
+      <button class="px-btn sq" id="h-pause" aria-label="Pause">II</button>
+      <b class="timer" id="h-time">00:00</b>
+      <div class="stats"><span>KO <b id="h-kills">0</b></span><span class="gold">$ <b id="h-coins">0</b></span></div>
+    </div>
+    <div class="bossbar" id="h-boss" hidden><span id="h-bname">BOSS</span><i><em id="h-bhp"></em></i></div>
+  </header>
+  <div class="gear" id="h-gear"></div>
+  <div class="joy" id="joy" hidden><i id="knob"></i></div>
+  <div class="banner" id="banner" hidden></div>
+  <p class="hint" id="hint" hidden>DRAG ANYWHERE TO MOVE</p>
+
+  <section class="title" id="title">
+    <div class="t-top"><span class="px-chip gold">$ <b data-coins>0</b></span><button class="px-chip" id="t-gift">GIFT<em class="dot" id="b-gift" hidden></em></button></div>
+    <h1 class="logo"><span>SANDSTORM</span><span>SURVIVORS</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="pick">
+      <p class="label">HERO</p><div class="heroes" id="heroes"></div>
+      <p class="label">STAGE</p><div class="stages" id="stages"></div>
+    </div>
+    <div class="t-bottom">
+      <button class="px-btn big" id="t-go">START</button>
+      <div class="row2"><button class="px-btn" id="t-shop">UPGRADES</button><button class="px-btn" id="t-sound">SOUND</button></div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="panel" id="panel"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

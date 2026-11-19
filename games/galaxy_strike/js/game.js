@@ -731,10 +731,17 @@ window.Game = (() => {
 
   return {
     on, init, start, demo, revive, bomb,
+    // testing / promo hooks: drop a power-up in front of the ship · jump to this sector's boss
+    give(id) { if (player) dropPickup(player.x, player.y - 170, id); },
+    skipToBoss() {
+      if (state !== "play" || boss || warnT > 0) return;
+      waveQ = []; enemies.forEach(e => killEnemy(e, true)); waveClearT = 0; run.wave = P.wavesPerBoss;
+      warnT = 2.8; Sound.play("warning"); on.banner && on.banner("WARNING", "Boss approaching", true);
+    },
     pause(p) { if (p && state === "play") { state = "paused"; Sound.muffle(true); } else if (!p && state === "paused") { state = "play"; Sound.muffle(false); last = 0; } },
     setShip(s) { shipCfg = s; },
     get state() { return state; }, get run() { return run; }, get player() { return player; }, get boss() { return boss; },
-    get enemies() { return enemies; }, get bullets() { return eBullets; },
+    get enemies() { return enemies; }, get bullets() { return eBullets; }, get pickups() { return pickups; },
     // testing hooks: advance and draw frames even when requestAnimationFrame is paused
     step(dt = STEP) { update(dt); }, renderNow() { render(); },
     world: () => ({ W, H })

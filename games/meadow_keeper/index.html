@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Meadow Keeper</title>
+  <meta name="description" content="Grow a wild meadow: plant flowers, dig ponds and put up nest boxes, then photograph the bees, butterflies, birds, frogs and hedgehogs that come to visit. Plays fully offline.">
+  <meta name="theme-color" content="#6fc25a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <div class="res">
+      <div class="chip nectar"><i class="i-drop"></i><b id="h-nectar">0</b></div>
+      <div class="chip seeds"><i class="i-seed"></i><b id="h-seeds">0</b></div>
+    </div>
+    <button class="lvl" id="h-level"><b id="h-lv">1</b><i><em id="h-xp"></em></i><small>Garden</small></button>
+  </header>
+  <div class="side">
+    <button class="rb" id="z-in" aria-label="Zoom in">+</button>
+    <button class="rb" id="z-out" aria-label="Zoom out">−</button>
+    <button class="rb gather" id="gather" hidden aria-label="Collect all"><i class="i-drop"></i><em id="g-n">0</em></button>
+  </div>
+  <div class="arrive" id="arrive" hidden></div>
+  <nav class="dock" id="dock">
+    <button class="db" id="d-build"><i class="di di-build"></i>Grow</button>
+    <button class="db" id="d-journal"><i class="di di-book"></i>Journal<em class="badge" id="b-journal" hidden></em></button>
+    <button class="db" id="d-tasks"><i class="di di-list"></i>Tasks<em class="badge" id="b-tasks" hidden></em></button>
+    <button class="db" id="d-more"><i class="di di-gift"></i>More<em class="badge" id="b-more" hidden>!</em></button>
+  </nav>
+  <div class="placebar" id="placebar" hidden>
+    <button class="pb no" id="p-no">✕</button>
+    <div class="pinfo"><b id="p-name">Daisy</b><small id="p-hint">Drag to move · tap a spot</small></div>
+    <button class="pb yes" id="p-yes">✓</button>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+  <div class="polaroid" id="polaroid" hidden></div>
+
+  <section class="title" id="title">
+    <div class="tcard">
+      <h1><span>Meadow</span><span>Keeper</span></h1>
+      <p id="tagline"></p>
+      <button class="btn big" id="t-play">Open the gate</button>
+    </div>
+  </section>
+
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

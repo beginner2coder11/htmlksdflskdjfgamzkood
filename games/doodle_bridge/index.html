@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Doodle Bridge</title>
+  <meta name="description" content="Draw lines that drop in as real physics planks, then press GO and guide the kid to the goal flag. 24 levels across 3 worlds, stars for using less ink, outfits and pens. Plays fully offline.">
+  <meta name="theme-color" content="#bfe6f5">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <!-- in-level HUD -->
+  <header class="top">
+    <button class="pill sq" id="b-levels" aria-label="Levels"><i class="i-grid"></i></button>
+    <div class="lvl"><small id="l-num">1-1</small><b id="l-name">First Steps</b></div>
+    <div class="pill coins"><i class="coin"></i><b data-coins>0</b></div>
+  </header>
+  <div class="inkbar" id="inkbar">
+    <div class="ink-track"><i id="ink-fill"></i><em id="m3"></em><em id="m2"></em></div>
+    <div class="ink-stars" id="ink-stars"><i></i><i></i><i></i></div>
+  </div>
+  <p class="tip" id="tip" hidden></p>
+  <nav class="bottom">
+    <button class="tool" id="b-undo"><i class="i-undo"></i><span>Undo</span></button>
+    <button class="tool" id="b-clear"><i class="i-erase"></i><span>Clear</span></button>
+    <button class="go" id="b-go"><span id="go-label">GO</span></button>
+    <button class="tool" id="b-hint"><i class="i-bulb"></i><span>Hint</span></button>
+    <button class="tool" id="b-retry"><i class="i-retry"></i><span>Retry</span></button>
+  </nav>
+  <div class="toast" id="toast" hidden></div>
+
+  <!-- title -->
+  <section class="screen title" id="s-title">
+    <div class="logo"><span>Doodle</span><span>Bridge</span><svg viewBox="0 0 220 24" aria-hidden="true"><path d="M4 14 C40 2, 70 22, 110 12 S180 4, 216 14" fill="none" stroke="#2e2a40" stroke-width="9" stroke-linecap="round"/><path d="M4 14 C40 2, 70 22, 110 12 S180 4, 216 14" fill="none" stroke="#ff7a5c" stroke-width="5" stroke-linecap="round"/></svg></div>
+    <p class="tag" id="tagline"></p>
+    <div class="title-btns">
+      <button class="btn big" id="t-play">Play</button>
+      <div class="row"><button class="btn mid alt" id="t-style">Style</button><button class="btn mid alt2" id="t-more">Gifts <em class="badge" id="b-daily" hidden>!</em></button></div>
+    </div>
+  </section>
+
+  <!-- level select -->
+  <section class="screen levels" id="s-levels">
+    <div class="lv-head"><button class="pill sq" id="lv-back" aria-label="Back">‹</button><h2>Levels</h2><div class="pill coins"><i class="coin"></i><b data-coins>0</b></div></div>
+    <div class="lv-stars"><i class="star on"></i><b id="lv-total">0</b> / <span id="lv-max">72</span></div>
+    <div class="worlds" id="worlds"></div>
+  </section>
+
+  <div class="sheet-wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Breezy Isle</title>
+  <meta name="description" content="A cozy island adventure: shake fruit trees, dig up shells, net butterflies, go fishing, help animal friends, decorate your camp and open new beaches. Plays fully offline.">
+  <meta name="theme-color" content="#7fd6ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <div class="hud-l">
+      <button class="chip place" id="h-map" aria-label="Map"><i class="sun" id="h-time"></i><span id="h-area">Palm Beach</span></button>
+    </div>
+    <div class="hud-r">
+      <div class="chip money"><i class="coin"></i><b id="h-coins">0</b></div>
+      <button class="chip bagc" id="h-bag" aria-label="Basket"><i class="basket"></i><b id="h-bagn">0/30</b></button>
+    </div>
+  </header>
+  <nav class="dock">
+    <button class="dbtn" id="d-journal"><i class="ic ic-book"></i><span>Journal</span><em class="badge" id="b-journal" hidden></em></button>
+    <button class="dbtn" id="d-friends"><i class="ic ic-heart"></i><span>Friends</span><em class="badge" id="b-friends" hidden></em></button>
+    <button class="dbtn" id="d-map"><i class="ic ic-map"></i><span>Map</span></button>
+    <button class="dbtn" id="d-menu"><i class="ic ic-gear"></i><span>More</span><em class="badge" id="b-menu" hidden>!</em></button>
+  </nav>
+  <button class="stopfish" id="stopfish" hidden>✕ Stop fishing</button>
+  <div class="toast" id="toast" hidden></div>
+  <div class="newcard" id="newcard" hidden></div>
+
+  <section class="title" id="title">
+    <div class="title-card">
+      <p class="t-small">welcome to</p>
+      <h1><span>Breezy</span><span>Isle</span></h1>
+      <p class="t-tag" id="tagline"></p>
+      <button class="btn big" id="t-play">Play</button>
+      <p class="t-hint">Tap to walk · tap things to use them</p>
+    </div>
+  </section>
+
+  <div class="sheet-wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Dash Street</title>
+  <meta name="description" content="A timed 3-lane runner in 36 levels: race the clock as a courier dog, dodge cones and lane-closed signs, hit dash pads, grab bones and parcels and chase down the runaway delivery truck. Plays fully offline.">
+  <meta name="theme-color" content="#7fcfff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-at="title">
+  <canvas id="view"></canvas>
+
+  <header class="hud">
+    <div class="hud-row">
+      <button class="rbtn" id="h-pause" aria-label="Pause"><i class="i-pause"></i></button>
+      <div class="clock" id="h-clock"><i class="watch"></i><b id="h-time">0:00</b></div>
+      <div class="pill"><i class="bone"></i><b id="h-bones">0</b><small id="h-target">/0</small></div>
+    </div>
+    <div class="prog"><i id="h-prog"></i><span class="pin" id="h-pin"></span><em id="h-end">🏁</em></div>
+    <div class="goals" id="h-goals"></div>
+  </header>
+  <div class="powers" id="h-powers"></div>
+
+  <section class="title" id="title">
+    <div class="t-top"><div class="pill"><i class="bone"></i><b data-bones>0</b></div><div class="pill">★ <b id="t-stars">0</b></div></div>
+    <h1 class="logo"><span>DASH</span><span>STREET</span></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="t-bottom">
+      <button class="playbtn" id="t-play">PLAY</button>
+      <nav class="t-nav">
+        <button class="nbtn" id="t-dogs"><i class="ni ni-dog"></i>Dogs</button>
+        <button class="nbtn" id="t-up"><i class="ni ni-up"></i>Upgrades</button>
+        <button class="nbtn" id="t-gift"><i class="ni ni-gift"></i>Gift<em class="badge" id="b-gift" hidden>!</em></button>
+      </nav>
+    </div>
+  </section>
+
+  <section class="map" id="map">
+    <div class="map-head"><button class="rbtn" id="m-back" aria-label="Back">‹</button><h2>Your route</h2><div class="pill"><i class="bone"></i><b data-bones>0</b></div></div>
+    <div class="streets" id="streets"></div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="wrap" id="wrap" hidden><div class="sheet" id="sheet"></div></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/skin.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
